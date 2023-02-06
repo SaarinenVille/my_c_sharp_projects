@@ -7,15 +7,21 @@ namespace YatzyDiceGame
         public Yatzy()
         {
             InitializeComponent();
+            ValitutBT.Enabled= false;
         }
-        
+            
         private void KaikkiBT_Click(object sender, EventArgs e)
         {
+                        
             piirraNoppa(Noppa01PB);
             piirraNoppa(Noppa02PB);
             piirraNoppa(Noppa03PB);
             piirraNoppa(Noppa04PB);
             piirraNoppa(Noppa05PB);
+
+            KaikkiBT.Enabled = false;
+            ValitutBT.Enabled = true;
+            
         }
         private void piirraNoppa(PictureBox NoppaBox)
         {
@@ -45,7 +51,7 @@ namespace YatzyDiceGame
         }
 
         private void ValitutBT_Click(object sender, EventArgs e)
-        {
+        {           
             if (checkBox1.Checked)
             {
                 piirraNoppa(Noppa01PB);
@@ -66,6 +72,12 @@ namespace YatzyDiceGame
             {
                 piirraNoppa(Noppa05PB);
             }
+
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+            checkBox5.Checked = false;
         }
 
         private void AlustaBT_Click(object sender, EventArgs e)
@@ -81,6 +93,8 @@ namespace YatzyDiceGame
             checkBox3.Checked = false;
             checkBox4.Checked = false;
             checkBox5.Checked = false;
+
+            KaikkiBT.Enabled = true;
         }
     }
 }
