@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+
 namespace YatzyDiceGame
 {
     public partial class Yatzy : Form
@@ -6,7 +8,7 @@ namespace YatzyDiceGame
         {
             InitializeComponent();
         }
-
+        
         private void KaikkiBT_Click(object sender, EventArgs e)
         {
             piirraNoppa(Noppa01PB);
@@ -64,6 +66,21 @@ namespace YatzyDiceGame
             {
                 piirraNoppa(Noppa05PB);
             }
+        }
+
+        private void AlustaBT_Click(object sender, EventArgs e)
+        {
+            Noppa01PB.Image = Properties.Resources.dice01;
+            Noppa02PB.Image = Properties.Resources.dice01;
+            Noppa03PB.Image = Properties.Resources.dice01;
+            Noppa04PB.Image = Properties.Resources.dice01;
+            Noppa05PB.Image = Properties.Resources.dice01;
+
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+            checkBox5.Checked = false;
         }
     }
 }

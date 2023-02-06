@@ -41,6 +41,7 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.AlustaBT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa01PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa02PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa03PB)).BeginInit();
@@ -111,7 +112,7 @@
             // KaikkiBT
             // 
             this.KaikkiBT.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.KaikkiBT.Location = new System.Drawing.Point(417, 332);
+            this.KaikkiBT.Location = new System.Drawing.Point(489, 332);
             this.KaikkiBT.Name = "KaikkiBT";
             this.KaikkiBT.Size = new System.Drawing.Size(138, 41);
             this.KaikkiBT.TabIndex = 6;
@@ -122,7 +123,7 @@
             // ValitutBT
             // 
             this.ValitutBT.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ValitutBT.Location = new System.Drawing.Point(668, 332);
+            this.ValitutBT.Location = new System.Drawing.Point(633, 332);
             this.ValitutBT.Name = "ValitutBT";
             this.ValitutBT.Size = new System.Drawing.Size(139, 41);
             this.ValitutBT.TabIndex = 7;
@@ -180,11 +181,23 @@
             this.checkBox5.Text = "Noppa 5";
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
+            // AlustaBT
+            // 
+            this.AlustaBT.BackColor = System.Drawing.Color.Coral;
+            this.AlustaBT.Location = new System.Drawing.Point(568, 433);
+            this.AlustaBT.Name = "AlustaBT";
+            this.AlustaBT.Size = new System.Drawing.Size(145, 41);
+            this.AlustaBT.TabIndex = 13;
+            this.AlustaBT.Text = "Alusta nopat";
+            this.AlustaBT.UseVisualStyleBackColor = false;
+            this.AlustaBT.Click += new System.EventHandler(this.AlustaBT_Click);
+            // 
             // Yatzy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1371, 900);
+            this.ClientSize = new System.Drawing.Size(1292, 519);
+            this.Controls.Add(this.AlustaBT);
             this.Controls.Add(this.checkBox5);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
@@ -227,5 +240,6 @@
         private CheckBox checkBox3;
         private CheckBox checkBox4;
         private CheckBox checkBox5;
+        private Button AlustaBT;
     }
 }
