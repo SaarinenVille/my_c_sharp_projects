@@ -21,37 +21,10 @@ namespace YatzyDiceGame
 
             KaikkiBT.Enabled = false;
             ValitutBT.Enabled = true;
-            
-        }
-        private void piirraNoppa(PictureBox NoppaBox)
-        {
-            Random satunnainen = new Random();
-            int noppa = satunnainen.Next(1, 7);
-            switch (noppa)
-            {
-                case 1:
-                    NoppaBox.Image = Properties.Resources.dice01;
-                    break;
-                case 2:
-                    NoppaBox.Image = Properties.Resources.dice02;
-                    break;
-                case 3:
-                    NoppaBox.Image = Properties.Resources.dice03;
-                    break;
-                case 4:
-                    NoppaBox.Image = Properties.Resources.dice04;
-                    break;
-                case 5:
-                    NoppaBox.Image = Properties.Resources.dice05;
-                    break;
-                case 6:
-                    NoppaBox.Image = Properties.Resources.dice06;
-                    break;
-            }
         }
 
         private void ValitutBT_Click(object sender, EventArgs e)
-        {           
+        {
             if (checkBox1.Checked)
             {
                 piirraNoppa(Noppa01PB);
@@ -80,6 +53,33 @@ namespace YatzyDiceGame
             checkBox5.Checked = false;
         }
 
+        private void piirraNoppa(PictureBox NoppaBox)
+        {
+            Random satunnainen = new Random();
+            int noppa = satunnainen.Next(1, 7);
+            switch (noppa)
+            {
+                case 1:
+                    NoppaBox.Image = Properties.Resources.dice01;
+                    break;
+                case 2:
+                    NoppaBox.Image = Properties.Resources.dice02;
+                    break;
+                case 3:
+                    NoppaBox.Image = Properties.Resources.dice03;
+                    break;
+                case 4:
+                    NoppaBox.Image = Properties.Resources.dice04;
+                    break;
+                case 5:
+                    NoppaBox.Image = Properties.Resources.dice05;
+                    break;
+                case 6:
+                    NoppaBox.Image = Properties.Resources.dice06;
+                    break;
+            }
+        }
+
         private void AlustaBT_Click(object sender, EventArgs e)
         {
             Noppa01PB.Image = Properties.Resources.dice01;
@@ -95,6 +95,18 @@ namespace YatzyDiceGame
             checkBox5.Checked = false;
 
             KaikkiBT.Enabled = true;
+        }
+
+        private void YkkosetBT_Click(object sender, EventArgs e)
+        {
+            if (Noppa01PB.Image == Properties.Resources.dicse01)
+            {
+                PelaajaYksiYkkosetTB.Text = "1";
+            }
+            else
+            {
+                PelaajaYksiYkkosetTB.Text = "0";
+            }
         }
     }
 }
