@@ -6,10 +6,12 @@ namespace YatzyDiceGame
 {
     public partial class Yatzy : Form
     {
+        
         int noppaArvo1, noppaArvo2, noppaArvo3, noppaArvo4, noppaArvo5;
         int[] arvoTaulu = new int[5];
         public Yatzy()
         {
+            
             InitializeComponent();
             ValitutBT.Enabled= false;
         }
@@ -38,11 +40,12 @@ namespace YatzyDiceGame
             {
                 KaikkiBT.Enabled = false;
                 ValitutBT.Enabled = false;
+                
             }
+            
 
-            
-            
-            
+
+
         }
         int nopanArvo = 0;
 
@@ -145,8 +148,10 @@ namespace YatzyDiceGame
             checkBox5.Checked = false;
 
             KaikkiBT.Enabled = true;
+            clickCount = 0;
+           
         }
-
+            
 
         // Aletaan määrittelemään pistetaulukkoa
 
@@ -205,6 +210,7 @@ namespace YatzyDiceGame
             KakkosetSummaLB.Text = Convert.ToString(summa);
         }
 
+
         private void KolmosetBT_Click(object sender, EventArgs e)
         {
             int summa = 0;
@@ -231,6 +237,8 @@ namespace YatzyDiceGame
             }
             KolmosetSummaLB.Text = Convert.ToString(summa);
         }
+
+
         private void NelosetBT_Click(object sender, EventArgs e)
         {
             int summa = 0;
@@ -257,6 +265,7 @@ namespace YatzyDiceGame
             }
             NelosetSummaLB.Text = Convert.ToString(summa);
         }
+
 
         private void ViitosetBT_Click(object sender, EventArgs e)
         {
@@ -285,6 +294,7 @@ namespace YatzyDiceGame
             ViitosetSummaLB.Text = Convert.ToString(summa);
         }
 
+
         private void KuutosetBT_Click(object sender, EventArgs e)
         {
             int summa = 0;
@@ -310,6 +320,59 @@ namespace YatzyDiceGame
                 summa += 6;
             }
             KuutosetSummaLB.Text = Convert.ToString(summa);
+        }
+
+
+        private void P2YkkosetBT_Click(object sender, EventArgs e)
+        {
+            int summa = 0;
+
+            if (arvoTaulu[0] == 1)
+            {
+                summa++;
+            }
+            if (arvoTaulu[1] == 1)
+            {
+                summa++;
+            }
+            if (arvoTaulu[2] == 1)
+            {
+                summa++;
+            }
+            if (arvoTaulu[3] == 1)
+            {
+                summa++;
+            }
+            if (arvoTaulu[4] == 1)
+            {
+                summa++;
+            }
+            PKaksiYkkösetSummaLB.Text = Convert.ToString(summa);
+        }
+
+        private void P2KakkosetBT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P2KolmosetBT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P2NelosetBT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P2ViitosetBT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P2KuutosetBT_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
