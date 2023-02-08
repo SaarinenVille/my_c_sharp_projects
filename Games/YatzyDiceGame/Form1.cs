@@ -1,4 +1,6 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Linq.Expressions;
+using YatzyDiceGame.Properties;
 
 namespace YatzyDiceGame
 {
@@ -53,6 +55,7 @@ namespace YatzyDiceGame
             checkBox5.Checked = false;
         }
 
+
         private void piirraNoppa(PictureBox NoppaBox)
         {
             Random satunnainen = new Random();
@@ -78,6 +81,14 @@ namespace YatzyDiceGame
                     NoppaBox.Image = Properties.Resources.dice06;
                     break;
             }
+            if(NoppaBox.Image == Properties.Resources.dice01) 
+            {
+                YkkosetSummaLB.Text = "1";
+            }
+            else
+            {
+                YkkosetSummaLB.Text = "0";
+            }
         }
 
         private void AlustaBT_Click(object sender, EventArgs e)
@@ -96,17 +107,23 @@ namespace YatzyDiceGame
 
             KaikkiBT.Enabled = true;
         }
-
+       
         private void YkkosetBT_Click(object sender, EventArgs e)
         {
-            if (Noppa01PB.Image == Properties.Resources.dicse01)
+
+
+
+
+            if (Noppa01PB.Image == Properties.Resources.dice01)
             {
-                PelaajaYksiYkkosetTB.Text = "1";
+               YkkosetSummaLB.Text = "1";
             }
             else
             {
-                PelaajaYksiYkkosetTB.Text = "0";
+                YkkosetSummaLB.Text = "0";
             }
+
+
         }
     }
 }

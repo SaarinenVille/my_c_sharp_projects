@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Yatzy));
             this.OtsikkoLB = new System.Windows.Forms.Label();
             this.Noppa01PB = new System.Windows.Forms.PictureBox();
             this.Noppa02PB = new System.Windows.Forms.PictureBox();
@@ -43,12 +45,15 @@
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.AlustaBT = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PelaajaYksiYkkosetTB = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.YkkosetBT = new System.Windows.Forms.Button();
+            this.YkkosetSummaLB = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa01PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa02PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa03PB)).BeginInit();
@@ -61,7 +66,7 @@
             // 
             this.OtsikkoLB.AutoSize = true;
             this.OtsikkoLB.Font = new System.Drawing.Font("Bernard MT Condensed", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.OtsikkoLB.Location = new System.Drawing.Point(385, 32);
+            this.OtsikkoLB.Location = new System.Drawing.Point(394, 9);
             this.OtsikkoLB.Name = "OtsikkoLB";
             this.OtsikkoLB.Size = new System.Drawing.Size(328, 57);
             this.OtsikkoLB.TabIndex = 0;
@@ -70,19 +75,20 @@
             // Noppa01PB
             // 
             this.Noppa01PB.Image = global::YatzyDiceGame.Properties.Resources.dice01;
-            this.Noppa01PB.Location = new System.Drawing.Point(131, 189);
+            this.Noppa01PB.Location = new System.Drawing.Point(319, 157);
             this.Noppa01PB.Name = "Noppa01PB";
-            this.Noppa01PB.Size = new System.Drawing.Size(164, 106);
+            this.Noppa01PB.Size = new System.Drawing.Size(101, 80);
             this.Noppa01PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Noppa01PB.TabIndex = 1;
             this.Noppa01PB.TabStop = false;
+            this.Noppa01PB.Tag = "";
             // 
             // Noppa02PB
             // 
             this.Noppa02PB.Image = global::YatzyDiceGame.Properties.Resources.dice01;
-            this.Noppa02PB.Location = new System.Drawing.Point(301, 189);
+            this.Noppa02PB.Location = new System.Drawing.Point(426, 157);
             this.Noppa02PB.Name = "Noppa02PB";
-            this.Noppa02PB.Size = new System.Drawing.Size(164, 106);
+            this.Noppa02PB.Size = new System.Drawing.Size(101, 80);
             this.Noppa02PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Noppa02PB.TabIndex = 2;
             this.Noppa02PB.TabStop = false;
@@ -90,9 +96,9 @@
             // Noppa03PB
             // 
             this.Noppa03PB.Image = global::YatzyDiceGame.Properties.Resources.dice01;
-            this.Noppa03PB.Location = new System.Drawing.Point(471, 189);
+            this.Noppa03PB.Location = new System.Drawing.Point(533, 157);
             this.Noppa03PB.Name = "Noppa03PB";
-            this.Noppa03PB.Size = new System.Drawing.Size(164, 106);
+            this.Noppa03PB.Size = new System.Drawing.Size(101, 80);
             this.Noppa03PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Noppa03PB.TabIndex = 3;
             this.Noppa03PB.TabStop = false;
@@ -100,9 +106,9 @@
             // Noppa04PB
             // 
             this.Noppa04PB.Image = global::YatzyDiceGame.Properties.Resources.dice01;
-            this.Noppa04PB.Location = new System.Drawing.Point(641, 189);
+            this.Noppa04PB.Location = new System.Drawing.Point(640, 157);
             this.Noppa04PB.Name = "Noppa04PB";
-            this.Noppa04PB.Size = new System.Drawing.Size(164, 106);
+            this.Noppa04PB.Size = new System.Drawing.Size(101, 80);
             this.Noppa04PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Noppa04PB.TabIndex = 4;
             this.Noppa04PB.TabStop = false;
@@ -110,9 +116,9 @@
             // Noppa05PB
             // 
             this.Noppa05PB.Image = global::YatzyDiceGame.Properties.Resources.dice01;
-            this.Noppa05PB.Location = new System.Drawing.Point(811, 189);
+            this.Noppa05PB.Location = new System.Drawing.Point(747, 157);
             this.Noppa05PB.Name = "Noppa05PB";
-            this.Noppa05PB.Size = new System.Drawing.Size(164, 106);
+            this.Noppa05PB.Size = new System.Drawing.Size(101, 80);
             this.Noppa05PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Noppa05PB.TabIndex = 5;
             this.Noppa05PB.TabStop = false;
@@ -120,7 +126,7 @@
             // KaikkiBT
             // 
             this.KaikkiBT.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.KaikkiBT.Location = new System.Drawing.Point(411, 320);
+            this.KaikkiBT.Location = new System.Drawing.Point(426, 458);
             this.KaikkiBT.Name = "KaikkiBT";
             this.KaikkiBT.Size = new System.Drawing.Size(138, 41);
             this.KaikkiBT.TabIndex = 6;
@@ -131,7 +137,7 @@
             // ValitutBT
             // 
             this.ValitutBT.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ValitutBT.Location = new System.Drawing.Point(555, 320);
+            this.ValitutBT.Location = new System.Drawing.Point(570, 458);
             this.ValitutBT.Name = "ValitutBT";
             this.ValitutBT.Size = new System.Drawing.Size(139, 41);
             this.ValitutBT.TabIndex = 7;
@@ -142,57 +148,52 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(163, 149);
+            this.checkBox1.Location = new System.Drawing.Point(365, 127);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(112, 34);
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Noppa 1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(333, 149);
+            this.checkBox2.Location = new System.Drawing.Point(471, 127);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(112, 34);
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
             this.checkBox2.TabIndex = 9;
-            this.checkBox2.Text = "Noppa 2";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(503, 149);
+            this.checkBox3.Location = new System.Drawing.Point(572, 127);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(112, 34);
+            this.checkBox3.Size = new System.Drawing.Size(15, 14);
             this.checkBox3.TabIndex = 10;
-            this.checkBox3.Text = "Noppa 3";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(673, 149);
+            this.checkBox4.Location = new System.Drawing.Point(681, 127);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(112, 34);
+            this.checkBox4.Size = new System.Drawing.Size(15, 14);
             this.checkBox4.TabIndex = 11;
-            this.checkBox4.Text = "Noppa 4";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(843, 149);
+            this.checkBox5.Location = new System.Drawing.Point(788, 127);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(112, 34);
+            this.checkBox5.Size = new System.Drawing.Size(15, 14);
             this.checkBox5.TabIndex = 12;
-            this.checkBox5.Text = "Noppa 5";
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // AlustaBT
             // 
             this.AlustaBT.BackColor = System.Drawing.Color.Coral;
-            this.AlustaBT.Location = new System.Drawing.Point(490, 367);
+            this.AlustaBT.Location = new System.Drawing.Point(505, 505);
             this.AlustaBT.Name = "AlustaBT";
             this.AlustaBT.Size = new System.Drawing.Size(145, 41);
             this.AlustaBT.TabIndex = 13;
@@ -203,44 +204,53 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.70094F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.29906F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 2, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.74394F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.25605F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.Controls.Add(this.YkkosetSummaLB, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.PelaajaYksiYkkosetTB, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.YkkosetBT, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.button3, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.button4, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.button5, 0, 6);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(333, 459);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 287);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.72414F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.27586F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(266, 402);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(284, 402);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
-            // textBox1
+            // YkkosetBT
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(46, 35);
-            this.textBox1.TabIndex = 1;
+            this.YkkosetBT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.YkkosetBT.Location = new System.Drawing.Point(3, 45);
+            this.YkkosetBT.Name = "YkkosetBT";
+            this.YkkosetBT.Size = new System.Drawing.Size(93, 34);
+            this.YkkosetBT.TabIndex = 6;
+            this.YkkosetBT.Text = "Ykköset";
+            this.YkkosetBT.UseVisualStyleBackColor = true;
+            this.YkkosetBT.Click += new System.EventHandler(this.YkkosetBT_Click);
             // 
-            // textBox2
+            // YkkosetSummaLB
             // 
-            this.textBox2.Location = new System.Drawing.Point(217, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(46, 35);
-            this.textBox2.TabIndex = 2;
+            this.YkkosetSummaLB.AutoSize = true;
+            this.YkkosetSummaLB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.YkkosetSummaLB.Location = new System.Drawing.Point(150, 42);
+            this.YkkosetSummaLB.Name = "YkkosetSummaLB";
+            this.YkkosetSummaLB.Size = new System.Drawing.Size(64, 21);
+            this.YkkosetSummaLB.TabIndex = 7;
+            this.YkkosetSummaLB.Text = "Summa";
             // 
             // label1
             // 
@@ -251,35 +261,75 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Pelaaja";
             // 
-            // PelaajaYksiYkkosetTB
+            // imageList1
             // 
-            this.PelaajaYksiYkkosetTB.Location = new System.Drawing.Point(165, 45);
-            this.PelaajaYksiYkkosetTB.Name = "PelaajaYksiYkkosetTB";
-            this.PelaajaYksiYkkosetTB.Size = new System.Drawing.Size(46, 35);
-            this.PelaajaYksiYkkosetTB.TabIndex = 4;
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "dice01.png");
+            this.imageList1.Images.SetKeyName(1, "dice02.png");
+            this.imageList1.Images.SetKeyName(2, "dice03.png");
+            this.imageList1.Images.SetKeyName(3, "dice04.png");
+            this.imageList1.Images.SetKeyName(4, "dice05.png");
+            this.imageList1.Images.SetKeyName(5, "dice06.png");
             // 
-            // textBox4
+            // button1
             // 
-            this.textBox4.Location = new System.Drawing.Point(217, 45);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(46, 35);
-            this.textBox4.TabIndex = 5;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(3, 85);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 37);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Kakkoset";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // YkkosetBT
+            // button2
             // 
-            this.YkkosetBT.Location = new System.Drawing.Point(3, 45);
-            this.YkkosetBT.Name = "YkkosetBT";
-            this.YkkosetBT.Size = new System.Drawing.Size(109, 34);
-            this.YkkosetBT.TabIndex = 6;
-            this.YkkosetBT.Text = "Ykköset";
-            this.YkkosetBT.UseVisualStyleBackColor = true;
-            this.YkkosetBT.Click += new System.EventHandler(this.YkkosetBT_Click);
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(3, 128);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 37);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Kolmoset";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(3, 171);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(93, 35);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Neloset";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(3, 212);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(93, 35);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Viitoset";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.Location = new System.Drawing.Point(3, 253);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(93, 37);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "Kuutoset";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // Yatzy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 991);
+            this.BackgroundImage = global::YatzyDiceGame.Properties.Resources.ryunosuke_kikuno_UsocPeObI3Y_unsplash;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(1243, 991);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.AlustaBT);
             this.Controls.Add(this.checkBox5);
@@ -314,7 +364,6 @@
         #endregion
 
         private Label OtsikkoLB;
-        private PictureBox Noppa01PB;
         private PictureBox Noppa02PB;
         private PictureBox Noppa03PB;
         private PictureBox Noppa04PB;
@@ -328,11 +377,15 @@
         private CheckBox checkBox5;
         private Button AlustaBT;
         private TableLayoutPanel tableLayoutPanel1;
-        private TextBox textBox1;
-        private TextBox textBox2;
         private Label label1;
-        private TextBox PelaajaYksiYkkosetTB;
-        private TextBox textBox4;
         private Button YkkosetBT;
+        private Label YkkosetSummaLB;
+        private PictureBox Noppa01PB;
+        private ImageList imageList1;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
     }
 }
