@@ -6,46 +6,112 @@ namespace YatzyDiceGame
 {
     public partial class Yatzy : Form
     {
+        int noppaArvo1, noppaArvo2, noppaArvo3, noppaArvo4, noppaArvo5;
+        int[] arvoTaulu = new int[5];
         public Yatzy()
         {
             InitializeComponent();
             ValitutBT.Enabled= false;
         }
-            
+
+        int clickCount = 0;
         private void KaikkiBT_Click(object sender, EventArgs e)
         {
                         
-            piirraNoppa(Noppa01PB);
-            piirraNoppa(Noppa02PB);
-            piirraNoppa(Noppa03PB);
-            piirraNoppa(Noppa04PB);
-            piirraNoppa(Noppa05PB);
+            noppaArvo1 = piirraNoppa(Noppa01PB);
+            arvoTaulu[0] = noppaArvo1;
+            noppaArvo2 = piirraNoppa(Noppa02PB);
+            arvoTaulu[1] = noppaArvo2;
+            noppaArvo3 = piirraNoppa(Noppa03PB);
+            arvoTaulu[2] = noppaArvo3;
+            noppaArvo4 = piirraNoppa(Noppa04PB);
+            arvoTaulu[3] = noppaArvo4;
+            noppaArvo5 = piirraNoppa(Noppa05PB);
+            arvoTaulu[4] = noppaArvo5;
 
-            KaikkiBT.Enabled = false;
-            ValitutBT.Enabled = true;
+            MessageBox.Show(noppaArvo1 + " " + noppaArvo2 + " " + noppaArvo3 + " " + noppaArvo4 + " " + noppaArvo5);
+
+            ValitutBT.Enabled= true;
+            clickCount++;
+
+            if(clickCount == 3) 
+            {
+                KaikkiBT.Enabled = false;
+                ValitutBT.Enabled = false;
+            }
+
+            
+            
+            
         }
+        int nopanArvo = 0;
+
+
+        private int piirraNoppa(PictureBox NoppaBox)
+        {
+
+            Random satunnainen = new Random();
+            int noppa = satunnainen.Next(1, 7);
+            switch (noppa)
+            {
+                case 1:
+                    NoppaBox.Image = Properties.Resources.dice01;
+                    return 1;
+                    break;
+                case 2:
+                    NoppaBox.Image = Properties.Resources.dice02;
+                    return 2;
+                    break;
+                case 3:
+                    NoppaBox.Image = Properties.Resources.dice03;
+                    return 3;
+                    break;
+                case 4:
+                    NoppaBox.Image = Properties.Resources.dice04;
+                    return 4;
+                    break;
+                case 5:
+                    NoppaBox.Image = Properties.Resources.dice05;
+                    return 5;
+                    break;
+                case 6:
+                    NoppaBox.Image = Properties.Resources.dice06;
+                    return 6;
+                    break;
+                default:
+                    return 0;
+                    break;
+            }
+
+        }
+
 
         private void ValitutBT_Click(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
             {
-                piirraNoppa(Noppa01PB);
+                noppaArvo1 = piirraNoppa(Noppa01PB);
+                arvoTaulu[0] = noppaArvo1;
             }
             if (checkBox2.Checked)
             {
-                piirraNoppa(Noppa02PB);
+                noppaArvo2 = piirraNoppa(Noppa02PB);
+                arvoTaulu[1] = noppaArvo2;
             }
             if (checkBox3.Checked)
             {
-                piirraNoppa(Noppa03PB);
+                noppaArvo3 = piirraNoppa(Noppa03PB);
+                arvoTaulu[2] = noppaArvo3;
             }
             if (checkBox4.Checked)
             {
-                piirraNoppa(Noppa04PB);
+                noppaArvo4 = piirraNoppa(Noppa04PB);
+                arvoTaulu[3] = noppaArvo4;
             }
             if (checkBox5.Checked)
             {
-                piirraNoppa(Noppa05PB);
+                noppaArvo5 = piirraNoppa(Noppa05PB);
+                arvoTaulu[4] = noppaArvo5;
             }
 
             checkBox1.Checked = false;
@@ -53,50 +119,15 @@ namespace YatzyDiceGame
             checkBox3.Checked = false;
             checkBox4.Checked = false;
             checkBox5.Checked = false;
+
+            clickCount++;
+            if(clickCount == 3) 
+            {
+                ValitutBT.Enabled = false;
+                KaikkiBT.Enabled = false;
+            }
         }
 
-        int nopanArvo = 0;
-        private void piirraNoppa(PictureBox NoppaBox)
-        {
-            int nopanArvo = 0;
-            Random satunnainen = new Random();
-            int noppa = satunnainen.Next(1, 7);
-            switch (noppa)
-            {
-                case 1:
-                    NoppaBox.Image = Properties.Resources.dice01;
-                    nopanArvo = 1;
-                    break;
-                case 2:
-                    NoppaBox.Image = Properties.Resources.dice02;
-                    nopanArvo = 2;
-                    break;
-                case 3:
-                    NoppaBox.Image = Properties.Resources.dice03;
-                    nopanArvo = 3;
-                    break;
-                case 4:
-                    NoppaBox.Image = Properties.Resources.dice04;
-                    nopanArvo = 4;
-                    break;
-                case 5:
-                    NoppaBox.Image = Properties.Resources.dice05;
-                    nopanArvo = 5;
-                    break;
-                case 6:
-                    NoppaBox.Image = Properties.Resources.dice06;
-                    nopanArvo = 6;
-                    break;
-            }
-            if (nopanArvo == 1)
-            {
-                YkkosetSummaLB.Text = "toimii";
-            }
-            else
-            {
-                YkkosetSummaLB.Text = "ei toimi";
-            }
-        }
 
 
         private void AlustaBT_Click(object sender, EventArgs e)
@@ -115,23 +146,170 @@ namespace YatzyDiceGame
 
             KaikkiBT.Enabled = true;
         }
-       
+
+
+        // Aletaan m‰‰rittelem‰‰n pistetaulukkoa
+
+        //Ensimm‰isen‰ m‰‰ritell‰‰n pisteet ykkˆsten mukaan 
         private void YkkosetBT_Click(object sender, EventArgs e)
         {
+            int summa = 0;
 
-
-
-
-            if (Noppa01PB.Image == Properties.Resources.dice01)
+            if (arvoTaulu[0] == 1)
             {
-               YkkosetSummaLB.Text = "1";
+                summa++;
             }
-            else
+            if (arvoTaulu[1] == 1) 
             {
-                YkkosetSummaLB.Text = "0";
+                summa++;
             }
+            if (arvoTaulu[2] == 1)
+            {
+                summa++;
+            }
+            if (arvoTaulu[3] == 1)
+            {
+                summa++;
+            }
+            if (arvoTaulu[4] == 1)
+            {
+                summa++;
+            }
+            YkkosetSummaLB.Text = Convert.ToString(summa);
+        }
 
+        private void KakkosetBT_Click(object sender, EventArgs e)
+        {
+            int summa = 0;
 
+            if (arvoTaulu[0] == 2)
+            {
+                summa += 2;
+            }
+            if (arvoTaulu[1] == 2)
+            {
+                summa += 2;
+            }
+            if (arvoTaulu[2] == 2)
+            {
+                summa += 2;
+            }
+            if (arvoTaulu[3] == 2)
+            {
+                summa += 2;
+            }
+            if (arvoTaulu[4] == 2)
+            {
+                summa += 2;
+            }
+            KakkosetSummaLB.Text = Convert.ToString(summa);
+        }
+
+        private void KolmosetBT_Click(object sender, EventArgs e)
+        {
+            int summa = 0;
+
+            if (arvoTaulu[0] == 3)
+            {
+                summa += 3;
+            }
+            if (arvoTaulu[1] == 3)
+            {
+                summa += 3;
+            }
+            if (arvoTaulu[2] == 3)
+            {
+                summa += 3;
+            }
+            if (arvoTaulu[3] == 3)
+            {
+                summa += 3;
+            }
+            if (arvoTaulu[4] == 3)
+            {
+                summa += 3;
+            }
+            KolmosetSummaLB.Text = Convert.ToString(summa);
+        }
+        private void NelosetBT_Click(object sender, EventArgs e)
+        {
+            int summa = 0;
+
+            if (arvoTaulu[0] == 4)
+            {
+                summa += 4;
+            }
+            if (arvoTaulu[1] == 4)
+            {
+                summa += 4;
+            }
+            if (arvoTaulu[2] == 4)
+            {
+                summa += 4;
+            }
+            if (arvoTaulu[3] == 4)
+            {
+                summa += 4;
+            }
+            if (arvoTaulu[4] == 4)
+            {
+                summa += 4;
+            }
+            NelosetSummaLB.Text = Convert.ToString(summa);
+        }
+
+        private void ViitosetBT_Click(object sender, EventArgs e)
+        {
+            int summa = 0;
+
+            if (arvoTaulu[0] == 5)
+            {
+                summa += 5;
+            }
+            if (arvoTaulu[1] == 5)
+            {
+                summa += 5;
+            }
+            if (arvoTaulu[2] == 5)
+            {
+                summa += 5;
+            }
+            if (arvoTaulu[3] == 5)
+            {
+                summa += 5;
+            }
+            if (arvoTaulu[4] == 5)
+            {
+                summa += 5;
+            }
+            ViitosetSummaLB.Text = Convert.ToString(summa);
+        }
+
+        private void KuutosetBT_Click(object sender, EventArgs e)
+        {
+            int summa = 0;
+
+            if (arvoTaulu[0] == 6)
+            {
+                summa += 6;
+            }
+            if (arvoTaulu[1] == 6)
+            {
+                summa += 6;
+            }
+            if (arvoTaulu[2] == 6)
+            {
+                summa += 6;
+            }
+            if (arvoTaulu[3] == 6)
+            {
+                summa += 6;
+            }
+            if (arvoTaulu[4] == 6)
+            {
+                summa += 6;
+            }
+            KuutosetSummaLB.Text = Convert.ToString(summa);
         }
     }
 }
