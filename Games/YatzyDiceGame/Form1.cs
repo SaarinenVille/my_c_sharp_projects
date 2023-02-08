@@ -55,41 +55,49 @@ namespace YatzyDiceGame
             checkBox5.Checked = false;
         }
 
-
+        int nopanArvo = 0;
         private void piirraNoppa(PictureBox NoppaBox)
         {
+            int nopanArvo = 0;
             Random satunnainen = new Random();
             int noppa = satunnainen.Next(1, 7);
             switch (noppa)
             {
                 case 1:
                     NoppaBox.Image = Properties.Resources.dice01;
+                    nopanArvo = 1;
                     break;
                 case 2:
                     NoppaBox.Image = Properties.Resources.dice02;
+                    nopanArvo = 2;
                     break;
                 case 3:
                     NoppaBox.Image = Properties.Resources.dice03;
+                    nopanArvo = 3;
                     break;
                 case 4:
                     NoppaBox.Image = Properties.Resources.dice04;
+                    nopanArvo = 4;
                     break;
                 case 5:
                     NoppaBox.Image = Properties.Resources.dice05;
+                    nopanArvo = 5;
                     break;
                 case 6:
                     NoppaBox.Image = Properties.Resources.dice06;
+                    nopanArvo = 6;
                     break;
             }
-            if(NoppaBox.Image == Properties.Resources.dice01) 
+            if (nopanArvo == 1)
             {
-                YkkosetSummaLB.Text = "1";
+                YkkosetSummaLB.Text = "toimii";
             }
             else
             {
-                YkkosetSummaLB.Text = "0";
+                YkkosetSummaLB.Text = "ei toimi";
             }
         }
+
 
         private void AlustaBT_Click(object sender, EventArgs e)
         {
