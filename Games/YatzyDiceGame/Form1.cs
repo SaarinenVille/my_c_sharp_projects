@@ -454,6 +454,7 @@ namespace YatzyDiceGame
             YhtSum2.Visible = true;
         }
 
+
         private void P2NelosetBT_Click(object sender, EventArgs e)
         {
             PKaksiNelosetSummaLB.Visible = true;
@@ -484,6 +485,7 @@ namespace YatzyDiceGame
             YhtSum2.Text = Convert.ToString(yhteensa2);
             YhtSum2.Visible = true;
         }
+
 
         private void P2ViitosetBT_Click(object sender, EventArgs e)
         {
@@ -546,15 +548,63 @@ namespace YatzyDiceGame
             YhtSum2.Text = Convert.ToString(yhteensa2);
             YhtSum2.Visible = true;
         }
+
         private void Noppa01PB_Click(object sender, EventArgs e)
         {
             if (checkBox1.Checked == false)
             {
                 checkBox1.Checked = true;
             }
-            else if (checkBox1.Checked == true)
+            else
             {
                 checkBox1.Checked = false;
+            }
+        }
+        private void Noppa02PB_Click(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked == false)
+            {
+                checkBox2.Checked = true;
+            }
+            else
+            {
+                checkBox2.Checked = false;
+            }
+        }
+
+        private void Noppa03PB_Click(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked == false)
+            {
+                checkBox3.Checked = true;
+            }
+            else
+            {
+                checkBox3.Checked = false;
+            }
+        }
+
+        private void Noppa04PB_Click(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked == false)
+            {
+                checkBox4.Checked = true;
+            }
+            else
+            {
+                checkBox4.Checked = false;
+            }
+        }
+
+        private void Noppa05PB_Click(object sender, EventArgs e)
+        {
+            if (checkBox5.Checked == false)
+            {
+                checkBox5.Checked = true;
+            }
+            else
+            {
+                checkBox5.Checked = false;
             }
         }
     }

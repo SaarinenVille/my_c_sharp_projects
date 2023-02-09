@@ -8,23 +8,23 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Saarnapuu\\.nuget\\packages\\": {},
+    "C:\\Users\\ville\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Opiskelu\\Omat\\repos\\my_c_sharp_projects\\Games\\YatzyDiceGame\\YatzyDiceGame.csproj",
+      "projectUniqueName": "E:\\Koulu\\Ohjelmistokehittäjä\\repos\\my_c_sharp_projects\\Games\\YatzyDiceGame\\YatzyDiceGame.csproj",
       "projectName": "YatzyDiceGame",
-      "projectPath": "C:\\Opiskelu\\Omat\\repos\\my_c_sharp_projects\\Games\\YatzyDiceGame\\YatzyDiceGame.csproj",
-      "packagesPath": "C:\\Users\\Saarnapuu\\.nuget\\packages\\",
-      "outputPath": "C:\\Opiskelu\\Omat\\repos\\my_c_sharp_projects\\Games\\YatzyDiceGame\\obj\\",
+      "projectPath": "E:\\Koulu\\Ohjelmistokehittäjä\\repos\\my_c_sharp_projects\\Games\\YatzyDiceGame\\YatzyDiceGame.csproj",
+      "packagesPath": "C:\\Users\\ville\\.nuget\\packages\\",
+      "outputPath": "E:\\Koulu\\Ohjelmistokehittäjä\\repos\\my_c_sharp_projects\\Games\\YatzyDiceGame\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Saarnapuu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ville\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
