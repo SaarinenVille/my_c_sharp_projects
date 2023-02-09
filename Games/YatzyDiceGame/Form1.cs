@@ -546,5 +546,16 @@ namespace YatzyDiceGame
             YhtSum2.Text = Convert.ToString(yhteensa2);
             YhtSum2.Visible = true;
         }
+        private void Noppa01PB_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == false)
+            {
+                checkBox1.Checked = true;
+            }
+            else if (checkBox1.Checked == true)
+            {
+                checkBox1.Checked = false;
+            }
+        }
     }
 }
