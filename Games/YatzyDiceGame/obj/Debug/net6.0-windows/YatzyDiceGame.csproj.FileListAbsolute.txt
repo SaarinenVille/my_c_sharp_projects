@@ -34,3 +34,4 @@ C:\Opiskelu\Omat\repos\my_c_sharp_projects\Games\YatzyDiceGame\obj\Debug\net6.0-
 C:\Opiskelu\Omat\repos\my_c_sharp_projects\Games\YatzyDiceGame\obj\Debug\net6.0-windows\YatzyDiceGame.pdb
 C:\Opiskelu\Omat\repos\my_c_sharp_projects\Games\YatzyDiceGame\obj\Debug\net6.0-windows\YatzyDiceGame.genruntimeconfig.cache
 C:\Opiskelu\Omat\repos\my_c_sharp_projects\Games\YatzyDiceGame\obj\Debug\net6.0-windows\ref\YatzyDiceGame.dll
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\Games\YatzyDiceGame\obj\Debug\net6.0-windows\YatzyDiceGame.Form2.resources
