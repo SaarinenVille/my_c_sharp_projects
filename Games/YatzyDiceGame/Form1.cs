@@ -9,7 +9,7 @@ namespace YatzyDiceGame
         // Luodaan noppien silm‰luvuille arvot muuttujiin
         int noppaArvo1, noppaArvo2, noppaArvo3, noppaArvo4, noppaArvo5;
         // Syˆtet‰‰n noppien arvot taulukkoon 
-        int[] arvoTaulu = new int[5];
+        int[] arvoTaulu = new int[5];       
         public Yatzy()
         {
 
@@ -160,6 +160,11 @@ namespace YatzyDiceGame
 
         }
 
+        private void UusiBT_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
 
         // Aletaan m‰‰rittelem‰‰n pistetaulukkoa
 
@@ -167,6 +172,7 @@ namespace YatzyDiceGame
 
         int summa1 = 0;
         int yhteensa1 = 0;
+        
         private void YkkosetBT_Click(object sender, EventArgs e)
         {
             YkkosetSummaLB.Visible = true;
@@ -194,8 +200,8 @@ namespace YatzyDiceGame
             }
             YkkosetSummaLB.Text = Convert.ToString(summa1);
             yhteensa1 += summa1;
-            YhtSum1.Text = Convert.ToString(yhteensa1);
-            YhtSum1.Visible = true;
+            YhtSumYla.Text = Convert.ToString(yhteensa1);
+            YhtSumYla.Visible = true;
         }
 
         private void KakkosetBT_Click(object sender, EventArgs e)
@@ -225,8 +231,8 @@ namespace YatzyDiceGame
             }
             KakkosetSummaLB.Text = Convert.ToString(summa1);
             yhteensa1 += summa1;
-            YhtSum1.Text = Convert.ToString(yhteensa1);
-            YhtSum1.Visible = true;
+            YhtSumYla.Text = Convert.ToString(yhteensa1);
+            YhtSumYla.Visible = true;
         }
 
 
@@ -257,8 +263,8 @@ namespace YatzyDiceGame
             }
             KolmosetSummaLB.Text = Convert.ToString(summa1);
             yhteensa1 += summa1;
-            YhtSum1.Text = Convert.ToString(yhteensa1);
-            YhtSum1.Visible = true;
+            YhtSumYla.Text = Convert.ToString(yhteensa1);
+            YhtSumYla.Visible = true;
         }
 
 
@@ -289,8 +295,8 @@ namespace YatzyDiceGame
             }
             NelosetSummaLB.Text = Convert.ToString(summa1);
             yhteensa1 += summa1;
-            YhtSum1.Text = Convert.ToString(yhteensa1);
-            YhtSum1.Visible = true;
+            YhtSumYla.Text = Convert.ToString(yhteensa1);
+            YhtSumYla.Visible = true;
         }
 
 
@@ -321,8 +327,8 @@ namespace YatzyDiceGame
             }
             ViitosetSummaLB.Text = Convert.ToString(summa1);
             yhteensa1 += summa1;
-            YhtSum1.Text = Convert.ToString(yhteensa1);
-            YhtSum1.Visible = true;
+            YhtSumYla.Text = Convert.ToString(yhteensa1);
+            YhtSumYla.Visible = true;
         }
 
 
@@ -353,9 +359,25 @@ namespace YatzyDiceGame
             }
             KuutosetSummaLB.Text = Convert.ToString(summa1);
             yhteensa1 += summa1;
-            YhtSum1.Text = Convert.ToString(yhteensa1);
-            YhtSum1.Visible = true;
+            YhtSumYla.Text = Convert.ToString(yhteensa1);
+            YhtSumYla.Visible = true;
         }
+
+        private void PsuoraBT_Click(object sender, EventArgs e)
+        {
+ 
+            
+        }
+
+
+
+
+
+
+
+
+
+
 
         // 2. pelaajan pisteet
 
@@ -548,7 +570,8 @@ namespace YatzyDiceGame
             YhtSum2.Text = Convert.ToString(yhteensa2);
             YhtSum2.Visible = true;
         }
-
+        
+        // Laitetaan nopille klikkausominaisuus(noppaa klikatessa checkboxin chekkaus vaihtuu 
         private void Noppa01PB_Click(object sender, EventArgs e)
         {
             if (checkBox1.Checked == false)
@@ -560,6 +583,8 @@ namespace YatzyDiceGame
                 checkBox1.Checked = false;
             }
         }
+
+
         private void Noppa02PB_Click(object sender, EventArgs e)
         {
             if (checkBox2.Checked == false)
@@ -606,6 +631,6 @@ namespace YatzyDiceGame
             {
                 checkBox5.Checked = false;
             }
-        }
+        }        
     }
 }
