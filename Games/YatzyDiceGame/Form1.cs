@@ -1,5 +1,6 @@
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 using YatzyDiceGame.Properties;
 
@@ -8,15 +9,15 @@ namespace YatzyDiceGame
     public partial class Yatzy : Form
     {
                 
-        // Luodaan noppien silm‰luvuille arvot muuttujiin
+        // Luodaan noppien silm‰luvukujen arvoille muuttujat
         int noppaArvo1, noppaArvo2, noppaArvo3, noppaArvo4, noppaArvo5;
-        // Syˆtet‰‰n noppien arvot taulukkoon 
+        // Luodaan arvoTaulu ja loppuTulos-taulukot, joihin tullaan syˆtt‰m‰‰n noppien arvot
         int[] arvoTaulu = new int[5];
         int[] loppuTulos = new int[5];
         public Yatzy()
         {
             InitializeComponent();
-            ValitutBT.Enabled = false;
+            ValitutBT.Enabled = false;            
         }
         // Tehd‰‰n muuttuja, joka laskee klikkausten m‰‰r‰n. (max. 3 heittoa, jonka j‰lkeen heittobuttonit disabloidaan
         int clickCount = 0;
@@ -34,13 +35,12 @@ namespace YatzyDiceGame
             noppaArvo4 = PiirraNoppa(Noppa04PB);
             arvoTaulu[3] = noppaArvo4;
             noppaArvo5 = PiirraNoppa(Noppa05PB);
-            arvoTaulu[4] = noppaArvo5;
+            arvoTaulu[4] = noppaArvo5;            
 
             // MessageBox.Show(noppaArvo1 + " " + noppaArvo2 + " " + noppaArvo3 + " " + noppaArvo4 + " " + noppaArvo5);
 
-            ValitutBT.Enabled = true;
             clickCount++;
-
+          
             if (clickCount == 3)
             {
                 KaikkiBT.Enabled = false;
@@ -88,10 +88,8 @@ namespace YatzyDiceGame
             {
                 ValitutBT.Enabled = false;
                 KaikkiBT.Enabled = false;
-            }
+            }            
         }
-
-
 
         // Seuraava metodi generoi jokaiseen pictureboxiin random nopan
         private int PiirraNoppa(PictureBox NoppaBox)
@@ -128,7 +126,6 @@ namespace YatzyDiceGame
                 default:
                     return 0;
             }
-
         }
 
         // Kun  kolme heittoa on heitetty tai vuoro lopetettu, alustetaan pictureboxit alkuper‰iseen muotoon Alusta nopat-buttonilla
@@ -147,15 +144,24 @@ namespace YatzyDiceGame
             checkBox5.Checked = false;
 
             KaikkiBT.Enabled = true;
+            ValitutBT.Enabled = false;
             clickCount = 0;
         }
 
-        // Aletaan m‰‰rittelem‰‰n pistetaulukkoa
+        // Aletaan m‰‰rittelem‰‰n pistetaulukkoa //
+
+        /* M‰‰ritet‰‰n muuttujat:
+         - summa-muuttuja, johon tallennetaan noppien yhteistulos kullakin heittovuorolla
+         - muuttujat yl‰- ja alasarakkeiden yhteistulokselle
+         - muuttuja kokonaispisteille
+         - yatzylle oma muuttuja, koska tulos on fixed
+        */
 
         int summa = 0;
         int yhteensaYla = 0;
         int yhteensaAla = 0;
         int kaikenSumma = 0;
+        int yatzy = 50;
         private void LaskuToimitus()
         {
             if (checkBox1.Checked)
@@ -181,12 +187,13 @@ namespace YatzyDiceGame
 
             summa = loppuTulos[0] + loppuTulos[1] + loppuTulos[2] + loppuTulos[3] + loppuTulos[4];
             Array.Clear(loppuTulos);
-
-
         }              
         
+        // Luodaan jokaiselle pistesarakkeen buttonille oma metodi, jossa kutsutaan laskuToimitus()- funktiota
+        // Poikkeuksena yatzy, jonka tulos on fixed 50
         private void YkkosetBT_Click(object sender, EventArgs e)
         {
+            
             LaskuToimitus();
             YkkosetSummaLB.Text = Convert.ToString(summa);
             YkkosetSummaLB.Visible = true;
@@ -195,6 +202,7 @@ namespace YatzyDiceGame
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            YkkosetBT.Enabled = false;
             
             
         }
@@ -210,6 +218,7 @@ namespace YatzyDiceGame
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            KakkosetBT.Enabled = false;
         }
 
 
@@ -223,6 +232,7 @@ namespace YatzyDiceGame
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            KolmosetBT.Enabled = false;
         }
 
 
@@ -236,6 +246,7 @@ namespace YatzyDiceGame
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            NelosetBT.Enabled = false;
         }
 
 
@@ -249,6 +260,7 @@ namespace YatzyDiceGame
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            ViitosetBT.Enabled = false;
         }
 
 
@@ -262,6 +274,7 @@ namespace YatzyDiceGame
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            KuutosetBT.Enabled = false;
         }
 
         private void YksiPariBT_Click(object sender, EventArgs e)
@@ -274,6 +287,7 @@ namespace YatzyDiceGame
             YhtSumAlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            YksiPariBT.Enabled = false;
         }
 
         private void KaksiPariaBT_Click(object sender, EventArgs e)
@@ -286,6 +300,7 @@ namespace YatzyDiceGame
             YhtSumAlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            KaksiPariaBT.Enabled = false;
         }
 
         private void KolmoslukuBT_Click(object sender, EventArgs e)
@@ -298,6 +313,7 @@ namespace YatzyDiceGame
             YhtSumAlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            KolmoslukuBT.Enabled = false;
         }
 
         private void NeloslukuBT_Click(object sender, EventArgs e)
@@ -310,6 +326,7 @@ namespace YatzyDiceGame
             YhtSumAlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            NeloslukuBT.Enabled = false;
         }
 
 
@@ -324,6 +341,7 @@ namespace YatzyDiceGame
             YhtSumAlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            PsuoraBT.Enabled = false;
         }
 
         private void IsuoraBT_Click(object sender, EventArgs e)
@@ -336,6 +354,7 @@ namespace YatzyDiceGame
             YhtSumAlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            IsuoraBT.Enabled = false;
         }
 
         private void TayskasiBT_Click(object sender, EventArgs e)
@@ -348,7 +367,9 @@ namespace YatzyDiceGame
             YhtSumAlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            TayskasiBT.Enabled = false;
         }
+        
 
         private void SattumaBT_Click(object sender, EventArgs e)
         {
@@ -360,31 +381,20 @@ namespace YatzyDiceGame
             YhtSumAlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            SattumaBT.Enabled = false;
         }
 
         private void YatzyBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
-            YatzyLB.Text = Convert.ToString(summa);
+            YatzyLB.Text = Convert.ToString(yatzy);
             YatzyLB.Visible = true;
-            yhteensaAla += summa;
+            yhteensaAla += yatzy;
             YhtSumAlaLB.Text = Convert.ToString(yhteensaAla);
             YhtSumAlaLB.Visible = true;
-            kaikenSumma += summa;
+            kaikenSumma += yatzy;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            YatzyBT.Enabled = false;
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
         // 2. pelaajan pisteet
 
@@ -580,6 +590,7 @@ namespace YatzyDiceGame
         
         
         // Laitetaan nopille klikkausominaisuus(noppaa klikatessa checkboxin chekkaus vaihtuu 
+
         private void Noppa01PB_Click(object sender, EventArgs e)
         {
             if (checkBox1.Checked == false)
@@ -589,6 +600,21 @@ namespace YatzyDiceGame
             else
             {
                 checkBox1.Checked = false;
+            }
+            if (checkBox1.Checked == true || checkBox2.Checked == true || checkBox3.Checked == true || checkBox4.Checked == true || checkBox5.Checked == true)
+            {
+                KaikkiBT.Enabled = false;
+                ValitutBT.Enabled = true;
+            }
+            else if (checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false)
+            {
+                KaikkiBT.Enabled = true;
+                ValitutBT.Enabled = false;
+            }
+            if (clickCount == 3)
+            {
+                KaikkiBT.Enabled = false;
+                ValitutBT.Enabled = false;
             }
         }
 
@@ -602,6 +628,21 @@ namespace YatzyDiceGame
             {
                 checkBox2.Checked = false;
             }
+            if (checkBox1.Checked == true || checkBox2.Checked == true || checkBox3.Checked == true || checkBox4.Checked == true || checkBox5.Checked == true)
+            {
+                KaikkiBT.Enabled = false;
+                ValitutBT.Enabled = true;
+            }
+            else if (checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false)
+            {
+                KaikkiBT.Enabled = true;
+                ValitutBT.Enabled = false;
+            }
+            if (clickCount == 3)
+            {
+                KaikkiBT.Enabled = false;
+                ValitutBT.Enabled = false;
+            }
         }
 
         private void Noppa03PB_Click(object sender, EventArgs e)
@@ -613,6 +654,21 @@ namespace YatzyDiceGame
             else
             {
                 checkBox3.Checked = false;
+            }
+            if (checkBox1.Checked == true || checkBox2.Checked == true || checkBox3.Checked == true || checkBox4.Checked == true || checkBox5.Checked == true)
+            {
+                KaikkiBT.Enabled = false;
+                ValitutBT.Enabled = true;
+            }
+            else if (checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false)
+            {
+                KaikkiBT.Enabled = true;
+                ValitutBT.Enabled = false;
+            }
+            if (clickCount == 3)
+            {
+                KaikkiBT.Enabled = false;
+                ValitutBT.Enabled = false;
             }
         }
 
@@ -626,6 +682,21 @@ namespace YatzyDiceGame
             {
                 checkBox4.Checked = false;
             }
+            if (checkBox1.Checked == true || checkBox2.Checked == true || checkBox3.Checked == true || checkBox4.Checked == true || checkBox5.Checked == true)
+            {
+                KaikkiBT.Enabled = false;
+                ValitutBT.Enabled = true;
+            }
+            else if (checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false)
+            {
+                KaikkiBT.Enabled = true;
+                ValitutBT.Enabled = false;
+            }
+            if (clickCount == 3)
+            {
+                KaikkiBT.Enabled = false;
+                ValitutBT.Enabled = false;
+            }
         }
 
         private void Noppa05PB_Click(object sender, EventArgs e)
@@ -638,7 +709,23 @@ namespace YatzyDiceGame
             {
                 checkBox5.Checked = false;
             }
+            if (checkBox1.Checked == true || checkBox2.Checked == true || checkBox3.Checked == true || checkBox4.Checked == true || checkBox5.Checked == true)
+            {
+                KaikkiBT.Enabled = false;
+                ValitutBT.Enabled = true;
+            }
+            else if (checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false)
+            {
+                KaikkiBT.Enabled = true;
+                ValitutBT.Enabled = false;
+            }
+            if (clickCount == 3)
+            {
+                KaikkiBT.Enabled = false;
+                ValitutBT.Enabled = false;
+            }
         }
+
         private void UusiBT_Click(object sender, EventArgs e)
         {
             Application.Restart();
