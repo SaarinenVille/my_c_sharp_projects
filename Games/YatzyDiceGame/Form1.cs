@@ -201,6 +201,13 @@ namespace YatzyDiceGame
             summa = loppuTulos[0] + loppuTulos[1] + loppuTulos[2] + loppuTulos[3] + loppuTulos[4];
             summa2 = loppuTulos[0] + loppuTulos[1] + loppuTulos[2] + loppuTulos[3] + loppuTulos[4];
             Array.Clear(loppuTulos);
+
+            /* Taulukon sorttausta voi k‰ytt‰‰ pistelaskun apuna
+              
+            Array.Sort(loppuTulos);
+            MessageBox.Show(Convert.ToString(loppuTulos[0] + "" + loppuTulos[1] + "" + loppuTulos[2] + "" + loppuTulos[3] + "" + loppuTulos[4]));
+             
+            */
             
         }              
         
