@@ -24,18 +24,23 @@ namespace YatzyDiceGame
 
         // Luodaan metodi Heit‰ kaikki-buttonille
         // Jokaiselle noppa-pictureboxille kutsutaan erikseen samaa Piirr‰Noppa-metodia 
+        
+      
+                    
         private void KaikkiBT_Click(object sender, EventArgs e)
         {
             noppaArvo1 = PiirraNoppa(Noppa01PB);
             arvoTaulu[0] = noppaArvo1;
+            
             noppaArvo2 = PiirraNoppa(Noppa02PB);
             arvoTaulu[1] = noppaArvo2;
             noppaArvo3 = PiirraNoppa(Noppa03PB);
             arvoTaulu[2] = noppaArvo3;
             noppaArvo4 = PiirraNoppa(Noppa04PB);
             arvoTaulu[3] = noppaArvo4;
+            
             noppaArvo5 = PiirraNoppa(Noppa05PB);
-            arvoTaulu[4] = noppaArvo5;            
+            arvoTaulu[4] = noppaArvo5;
 
             // MessageBox.Show(noppaArvo1 + " " + noppaArvo2 + " " + noppaArvo3 + " " + noppaArvo4 + " " + noppaArvo5);
 
@@ -94,7 +99,6 @@ namespace YatzyDiceGame
         // Seuraava metodi generoi jokaiseen pictureboxiin random nopan
         private int PiirraNoppa(PictureBox NoppaBox)
         {
-
             Random satunnainen = new Random();
             int noppa = satunnainen.Next(1, 7);
             switch (noppa)
