@@ -1,6 +1,6 @@
 ﻿namespace YatzyDiceGame
 {
-    partial class Yatzy
+    partial class YatzyForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -138,6 +138,11 @@
             this.Yhteensa2LB = new System.Windows.Forms.Label();
             this.KaikenSumma2LB = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.HoldIcon1 = new System.Windows.Forms.Label();
+            this.HoldIcon2 = new System.Windows.Forms.Label();
+            this.HoldIcon3 = new System.Windows.Forms.Label();
+            this.HoldIcon4 = new System.Windows.Forms.Label();
+            this.HoldIcon5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa01PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa02PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa03PB)).BeginInit();
@@ -156,7 +161,7 @@
             // OtsikkoLB
             // 
             this.OtsikkoLB.AutoSize = true;
-            this.OtsikkoLB.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.OtsikkoLB.BackColor = System.Drawing.Color.Transparent;
             this.OtsikkoLB.Font = new System.Drawing.Font("Bernard MT Condensed", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OtsikkoLB.Location = new System.Drawing.Point(384, 22);
             this.OtsikkoLB.Name = "OtsikkoLB";
@@ -166,6 +171,7 @@
             // 
             // Noppa01PB
             // 
+            this.Noppa01PB.BackColor = System.Drawing.Color.Transparent;
             this.Noppa01PB.Image = global::YatzyDiceGame.Properties.Resources.rollingDice;
             this.Noppa01PB.Location = new System.Drawing.Point(303, 406);
             this.Noppa01PB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -179,6 +185,7 @@
             // 
             // Noppa02PB
             // 
+            this.Noppa02PB.BackColor = System.Drawing.Color.Transparent;
             this.Noppa02PB.Image = global::YatzyDiceGame.Properties.Resources.rollingDice;
             this.Noppa02PB.Location = new System.Drawing.Point(401, 406);
             this.Noppa02PB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -191,6 +198,7 @@
             // 
             // Noppa03PB
             // 
+            this.Noppa03PB.BackColor = System.Drawing.Color.Transparent;
             this.Noppa03PB.Image = global::YatzyDiceGame.Properties.Resources.rollingDice;
             this.Noppa03PB.Location = new System.Drawing.Point(499, 406);
             this.Noppa03PB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -203,6 +211,7 @@
             // 
             // Noppa04PB
             // 
+            this.Noppa04PB.BackColor = System.Drawing.Color.Transparent;
             this.Noppa04PB.Image = global::YatzyDiceGame.Properties.Resources.rollingDice;
             this.Noppa04PB.Location = new System.Drawing.Point(597, 406);
             this.Noppa04PB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -215,6 +224,7 @@
             // 
             // Noppa05PB
             // 
+            this.Noppa05PB.BackColor = System.Drawing.Color.Transparent;
             this.Noppa05PB.Image = global::YatzyDiceGame.Properties.Resources.rollingDice;
             this.Noppa05PB.Location = new System.Drawing.Point(696, 406);
             this.Noppa05PB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -260,6 +270,7 @@
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 8;
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
             // 
             // checkBox2
             // 
@@ -270,6 +281,7 @@
             this.checkBox2.Size = new System.Drawing.Size(15, 14);
             this.checkBox2.TabIndex = 9;
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.Visible = false;
             // 
             // checkBox3
             // 
@@ -280,6 +292,7 @@
             this.checkBox3.Size = new System.Drawing.Size(15, 14);
             this.checkBox3.TabIndex = 10;
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.Visible = false;
             // 
             // checkBox4
             // 
@@ -290,6 +303,7 @@
             this.checkBox4.Size = new System.Drawing.Size(15, 14);
             this.checkBox4.TabIndex = 11;
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.Visible = false;
             // 
             // checkBox5
             // 
@@ -300,6 +314,7 @@
             this.checkBox5.Size = new System.Drawing.Size(15, 14);
             this.checkBox5.TabIndex = 12;
             this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.Visible = false;
             // 
             // AlustaBT
             // 
@@ -1568,7 +1583,67 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(251, 31);
             this.tableLayoutPanel8.TabIndex = 25;
             // 
-            // Yatzy
+            // HoldIcon1
+            // 
+            this.HoldIcon1.AutoSize = true;
+            this.HoldIcon1.BackColor = System.Drawing.Color.Transparent;
+            this.HoldIcon1.Font = new System.Drawing.Font("Wingdings", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HoldIcon1.Location = new System.Drawing.Point(336, 378);
+            this.HoldIcon1.Name = "HoldIcon1";
+            this.HoldIcon1.Size = new System.Drawing.Size(33, 26);
+            this.HoldIcon1.TabIndex = 27;
+            this.HoldIcon1.Text = "I";
+            this.HoldIcon1.Visible = false;
+            // 
+            // HoldIcon2
+            // 
+            this.HoldIcon2.AutoSize = true;
+            this.HoldIcon2.BackColor = System.Drawing.Color.Transparent;
+            this.HoldIcon2.Font = new System.Drawing.Font("Wingdings", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HoldIcon2.Location = new System.Drawing.Point(434, 378);
+            this.HoldIcon2.Name = "HoldIcon2";
+            this.HoldIcon2.Size = new System.Drawing.Size(33, 26);
+            this.HoldIcon2.TabIndex = 28;
+            this.HoldIcon2.Text = "I";
+            this.HoldIcon2.Visible = false;
+            // 
+            // HoldIcon3
+            // 
+            this.HoldIcon3.AutoSize = true;
+            this.HoldIcon3.BackColor = System.Drawing.Color.Transparent;
+            this.HoldIcon3.Font = new System.Drawing.Font("Wingdings", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HoldIcon3.Location = new System.Drawing.Point(526, 378);
+            this.HoldIcon3.Name = "HoldIcon3";
+            this.HoldIcon3.Size = new System.Drawing.Size(33, 26);
+            this.HoldIcon3.TabIndex = 29;
+            this.HoldIcon3.Text = "I";
+            this.HoldIcon3.Visible = false;
+            // 
+            // HoldIcon4
+            // 
+            this.HoldIcon4.AutoSize = true;
+            this.HoldIcon4.BackColor = System.Drawing.Color.Transparent;
+            this.HoldIcon4.Font = new System.Drawing.Font("Wingdings", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HoldIcon4.Location = new System.Drawing.Point(626, 378);
+            this.HoldIcon4.Name = "HoldIcon4";
+            this.HoldIcon4.Size = new System.Drawing.Size(33, 26);
+            this.HoldIcon4.TabIndex = 30;
+            this.HoldIcon4.Text = "I";
+            this.HoldIcon4.Visible = false;
+            // 
+            // HoldIcon5
+            // 
+            this.HoldIcon5.AutoSize = true;
+            this.HoldIcon5.BackColor = System.Drawing.Color.Transparent;
+            this.HoldIcon5.Font = new System.Drawing.Font("Wingdings", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HoldIcon5.Location = new System.Drawing.Point(724, 378);
+            this.HoldIcon5.Name = "HoldIcon5";
+            this.HoldIcon5.Size = new System.Drawing.Size(33, 26);
+            this.HoldIcon5.TabIndex = 31;
+            this.HoldIcon5.Text = "I";
+            this.HoldIcon5.Visible = false;
+            // 
+            // YatzyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1576,6 +1651,11 @@
             this.BackgroundImage = global::YatzyDiceGame.Properties.Resources.ryunosuke_kikuno_UsocPeObI3Y_unsplash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1087, 851);
+            this.Controls.Add(this.HoldIcon5);
+            this.Controls.Add(this.HoldIcon4);
+            this.Controls.Add(this.HoldIcon3);
+            this.Controls.Add(this.HoldIcon2);
+            this.Controls.Add(this.HoldIcon1);
             this.Controls.Add(this.tableLayoutPanel8);
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.OhjeetBT);
@@ -1602,8 +1682,9 @@
             this.Controls.Add(this.OtsikkoLB);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "Yatzy";
+            this.Name = "YatzyForm";
             this.Text = "Yatzy dice game";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Yatzy_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.Noppa01PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa02PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa03PB)).EndInit();
@@ -1742,5 +1823,10 @@
         private Label Yhteensa2LB;
         private Label KaikenSumma2LB;
         private TableLayoutPanel tableLayoutPanel8;
+        private Label HoldIcon1;
+        private Label HoldIcon2;
+        private Label HoldIcon3;
+        private Label HoldIcon4;
+        private Label HoldIcon5;
     }
 }

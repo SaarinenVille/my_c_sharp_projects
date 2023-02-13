@@ -5,16 +5,17 @@ using System.Reflection.Metadata.Ecma335;
 using YatzyDiceGame.Properties;
 
 namespace YatzyDiceGame
-{    
-    public partial class Yatzy : Form
+{
+
+    public partial class YatzyForm : Form
     {
-                
+
         // Luodaan noppien silmäluvukujen arvoille muuttujat
         int noppaArvo1, noppaArvo2, noppaArvo3, noppaArvo4, noppaArvo5;
         // Luodaan arvoTaulu ja loppuTulos-taulukot, joihin tullaan syöttämään noppien arvot
         int[] arvoTaulu = new int[5];
         int[] loppuTulos = new int[5];
-        public Yatzy()
+        public YatzyForm()
         {
             InitializeComponent();
             ValitutBT.Enabled = false;            
@@ -31,14 +32,12 @@ namespace YatzyDiceGame
         {
             noppaArvo1 = PiirraNoppa(Noppa01PB);
             arvoTaulu[0] = noppaArvo1;
-            
             noppaArvo2 = PiirraNoppa(Noppa02PB);
             arvoTaulu[1] = noppaArvo2;
             noppaArvo3 = PiirraNoppa(Noppa03PB);
             arvoTaulu[2] = noppaArvo3;
             noppaArvo4 = PiirraNoppa(Noppa04PB);
-            arvoTaulu[3] = noppaArvo4;
-            
+            arvoTaulu[3] = noppaArvo4;          
             noppaArvo5 = PiirraNoppa(Noppa05PB);
             arvoTaulu[4] = noppaArvo5;
 
@@ -146,6 +145,12 @@ namespace YatzyDiceGame
             checkBox3.Checked = false;
             checkBox4.Checked = false;
             checkBox5.Checked = false;
+
+            HoldIcon1.Visible = false;
+            HoldIcon2.Visible = false;
+            HoldIcon3.Visible = false;
+            HoldIcon4.Visible = false;
+            HoldIcon5.Visible = false;
 
             KaikkiBT.Enabled = true;
             ValitutBT.Enabled = false;
@@ -794,20 +799,30 @@ namespace YatzyDiceGame
 
         // Laitetaan nopille klikkausominaisuus(noppaa klikatessa checkboxin chekkaus vaihtuu 
 
+
+        
+
+
+
+
         private void Noppa01PB_Click(object sender, EventArgs e)
         {
+            
+
             if (checkBox1.Checked == false)
             {
                 checkBox1.Checked = true;
+                HoldIcon1.Visible = true;
             }
             else
             {
                 checkBox1.Checked = false;
+                HoldIcon1.Visible = false;
             }
             if (checkBox1.Checked == true || checkBox2.Checked == true || checkBox3.Checked == true || checkBox4.Checked == true || checkBox5.Checked == true)
             {
                 KaikkiBT.Enabled = false;
-                ValitutBT.Enabled = true;
+                ValitutBT.Enabled = true;                
             }
             else if (checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false && checkBox1.Checked == false)
             {
@@ -826,10 +841,12 @@ namespace YatzyDiceGame
             if (checkBox2.Checked == false)
             {
                 checkBox2.Checked = true;
+                HoldIcon2.Visible = true;
             }
             else
             {
                 checkBox2.Checked = false;
+                HoldIcon2.Visible = false;
             }
             if (checkBox1.Checked == true || checkBox2.Checked == true || checkBox3.Checked == true || checkBox4.Checked == true || checkBox5.Checked == true)
             {
@@ -853,10 +870,12 @@ namespace YatzyDiceGame
             if (checkBox3.Checked == false)
             {
                 checkBox3.Checked = true;
+                HoldIcon3.Visible = true;
             }
             else
             {
                 checkBox3.Checked = false;
+                HoldIcon3.Visible = false;
             }
             if (checkBox1.Checked == true || checkBox2.Checked == true || checkBox3.Checked == true || checkBox4.Checked == true || checkBox5.Checked == true)
             {
@@ -880,10 +899,12 @@ namespace YatzyDiceGame
             if (checkBox4.Checked == false)
             {
                 checkBox4.Checked = true;
+                HoldIcon4.Visible = true;
             }
             else
             {
                 checkBox4.Checked = false;
+                HoldIcon4.Visible = false;
             }
             if (checkBox1.Checked == true || checkBox2.Checked == true || checkBox3.Checked == true || checkBox4.Checked == true || checkBox5.Checked == true)
             {
@@ -907,10 +928,12 @@ namespace YatzyDiceGame
             if (checkBox5.Checked == false)
             {
                 checkBox5.Checked = true;
+                HoldIcon5.Visible = true;
             }
             else
             {
                 checkBox5.Checked = false;
+                HoldIcon5.Visible = false;
             }
             if (checkBox1.Checked == true || checkBox2.Checked == true || checkBox3.Checked == true || checkBox4.Checked == true || checkBox5.Checked == true)
             {
@@ -936,8 +959,13 @@ namespace YatzyDiceGame
 
         private void OhjeetBT_Click(object sender, EventArgs e)
         {
-            Form2 frm2 = new Form2();
+            Ohjeet frm2 = new Ohjeet();
             frm2.Show();
+        }
+
+        private void Yatzy_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

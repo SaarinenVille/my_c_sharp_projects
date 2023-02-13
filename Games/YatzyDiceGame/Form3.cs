@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace YatzyDiceGame
 {
-    public partial class Ohjeet : Form
+    public partial class AloitusForm : Form
     {
-        public Ohjeet()
+        public AloitusForm()
         {
             InitializeComponent();
+        }
+
+        private void ALoitaPeliBT_Click(object sender, EventArgs e)
+        {
+            YatzyForm frm1 = new YatzyForm();
+            frm1.Show();
+            this.Hide();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace YatzyDiceGame
 {
-    partial class Form2
+    partial class Ohjeet
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ohjeet));
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
-            // Form2
+            // Ohjeet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -62,8 +62,8 @@
             this.ClientSize = new System.Drawing.Size(997, 623);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "Ohjeet";
+            this.Text = "Peliohjeet";
             this.ResumeLayout(false);
             this.PerformLayout();
 
