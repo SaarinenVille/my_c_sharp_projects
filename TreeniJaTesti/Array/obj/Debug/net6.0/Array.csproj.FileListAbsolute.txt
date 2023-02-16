@@ -1,0 +1,15 @@
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\bin\Debug\net6.0\Array.exe
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\bin\Debug\net6.0\Array.deps.json
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\bin\Debug\net6.0\Array.runtimeconfig.json
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\bin\Debug\net6.0\Array.dll
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\bin\Debug\net6.0\Array.pdb
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\obj\Debug\net6.0\Array.csproj.AssemblyReference.cache
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\obj\Debug\net6.0\Array.GeneratedMSBuildEditorConfig.editorconfig
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\obj\Debug\net6.0\Array.AssemblyInfoInputs.cache
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\obj\Debug\net6.0\Array.AssemblyInfo.cs
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\obj\Debug\net6.0\Array.csproj.CoreCompileInputs.cache
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\obj\Debug\net6.0\Array.dll
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\obj\Debug\net6.0\refint\Array.dll
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\obj\Debug\net6.0\Array.pdb
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\obj\Debug\net6.0\Array.genruntimeconfig.cache
+E:\Koulu\Ohjelmistokehittäjä\repos\my_c_sharp_projects\TreeniJaTesti\Array\obj\Debug\net6.0\ref\Array.dll

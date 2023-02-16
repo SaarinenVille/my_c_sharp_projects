@@ -134,6 +134,7 @@ namespace YatzyDiceGame
         // Kun  kolme heittoa on heitetty tai vuoro lopetettu, alustetaan pictureboxit alkuper‰iseen muotoon Alusta nopat-buttonilla
         private void AlustaBT_Click(object sender, EventArgs e)
         {
+            Array.Clear(arvoTaulu);
             Noppa01PB.Image = Properties.Resources.rollingDice;
             Noppa02PB.Image = Properties.Resources.rollingDice;
             Noppa03PB.Image = Properties.Resources.rollingDice;
@@ -175,6 +176,8 @@ namespace YatzyDiceGame
         int kaikenSumma = 0;
         int kaikenSumma2 = 0;
         int yatzy = 50;
+
+        
         private void LaskuToimitus()
         {
             if (checkBox1.Checked)
@@ -201,21 +204,48 @@ namespace YatzyDiceGame
             summa = loppuTulos[0] + loppuTulos[1] + loppuTulos[2] + loppuTulos[3] + loppuTulos[4];
             summa2 = loppuTulos[0] + loppuTulos[1] + loppuTulos[2] + loppuTulos[3] + loppuTulos[4];
             Array.Clear(loppuTulos);
-
-            /* Taulukon sorttausta voi k‰ytt‰‰ pistelaskun apuna
+            /*
+            Taulukon sorttausta voi k‰ytt‰‰ pistelaskun apuna
               
             Array.Sort(loppuTulos);
             MessageBox.Show(Convert.ToString(loppuTulos[0] + "" + loppuTulos[1] + "" + loppuTulos[2] + "" + loppuTulos[3] + "" + loppuTulos[4]));
-             
             */
-            
-        }              
+        }  
+        
         
         // 1. pelaajan pisteet
         // Luodaan jokaiselle pistesarakkeen buttonille oma metodi, jossa kutsutaan laskuToimitus()- funktiota
         // Poikkeuksena yatzy, jonka tulos on fixed 50
         private void YkkosetBT_Click(object sender, EventArgs e)
         {
+            summa = 0;
+            for(int i = 0; i < arvoTaulu.Length; i++) 
+            {
+                if (arvoTaulu[i] == 1)
+                {
+                    summa+=arvoTaulu[i];
+                    YkkosetSummaLB.Text = Convert.ToString(summa);
+                    YkkosetSummaLB.Visible = true;
+                    YkkosetBT.Enabled = false;
+                    
+                }
+                else if (arvoTaulu[0] != 1 && arvoTaulu[1] != 1 && arvoTaulu[2] != 1 && arvoTaulu[3] != 1 && arvoTaulu[4] != 1)
+                {
+                    YkkosetSummaLB.Text = "Dildo";
+                    YkkosetSummaLB.Visible = true;
+                }
+            }
+
+            yhteensaYla += summa;
+            YhtSumYlaLB.Text = Convert.ToString(yhteensaYla);
+            YhtSumYlaLB.Visible = true;
+            kaikenSumma += summa;
+            KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
+            
+
+
+            /*
+            Toinen tapa, jolla kutsutaan erillist‰ laskutoimitus-metodia
             LaskuToimitus();
             YkkosetSummaLB.Text = Convert.ToString(summa);
             YkkosetSummaLB.Visible = true;
@@ -224,84 +254,170 @@ namespace YatzyDiceGame
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
-            YkkosetBT.Enabled = false;                       
+            YkkosetBT.Enabled = false;              
+            */
         }
-
         private void KakkosetBT_Click(object sender, EventArgs e)
         {
-            
-            LaskuToimitus();
-            KakkosetSummaLB.Text = Convert.ToString(summa);
-            KakkosetSummaLB.Visible = true;
+            summa = 0;
+            for (int i = 0; i < arvoTaulu.Length; i++)
+            {
+                if (arvoTaulu[i] == 2)
+                {
+                    summa+=arvoTaulu[i];
+                    KakkosetSummaLB.Text = Convert.ToString(summa);
+                    KakkosetSummaLB.Visible = true;
+                    KakkosetBT.Enabled = false;
+
+                }
+                else if (arvoTaulu[0] != 2 && arvoTaulu[1] != 2 && arvoTaulu[2] != 2 && arvoTaulu[3] != 2 && arvoTaulu[4] != 2)
+                {
+                    KakkosetSummaLB.Text = "Dildo";
+                    KakkosetSummaLB.Visible = true;
+                }
+            }
             yhteensaYla += summa;
             YhtSumYlaLB.Text = Convert.ToString(yhteensaYla);
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
-            KakkosetBT.Enabled = false;
         }
-
 
         private void KolmosetBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
-            KolmosetSummaLB.Text = Convert.ToString(summa);
-            KolmosetSummaLB.Visible = true;
+            summa = 0;
+            for (int i = 0; i < arvoTaulu.Length; i++)
+            {
+                if (arvoTaulu[i] == 3)
+                {
+                    summa+=arvoTaulu[i];
+                    KolmosetSummaLB.Text = Convert.ToString(summa);
+                    KolmosetSummaLB.Visible = true;
+                    KolmosetBT.Enabled = false;
+                }
+                else if (arvoTaulu[0] != 3 && arvoTaulu[1] != 3 && arvoTaulu[2] != 3 && arvoTaulu[3] != 3 && arvoTaulu[4] != 3)
+                {
+                    KolmosetSummaLB.Text = "Dildo";
+                    KolmosetSummaLB.Visible = true;
+                }
+            }
             yhteensaYla += summa;
             YhtSumYlaLB.Text = Convert.ToString(yhteensaYla);
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
-            KolmosetBT.Enabled = false;
         }
-
 
         private void NelosetBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
-            NelosetSummaLB.Text = Convert.ToString(summa);
-            NelosetSummaLB.Visible = true;
+            summa = 0;
+            for (int i = 0; i < arvoTaulu.Length; i++)
+            {
+                if (arvoTaulu[i] == 4)
+                {
+                    summa += arvoTaulu[i];
+                    NelosetSummaLB.Text = Convert.ToString(summa);
+                    NelosetSummaLB.Visible = true;
+                    NelosetBT.Enabled = false;
+                }
+                else if (arvoTaulu[0] != 4 && arvoTaulu[1] != 4 && arvoTaulu[2] != 4 && arvoTaulu[3] != 4 && arvoTaulu[4] != 4)
+                {
+                    NelosetSummaLB.Text = "Dildo";
+                    NelosetSummaLB.Visible = true;
+                }
+
+            }
             yhteensaYla += summa;
             YhtSumYlaLB.Text = Convert.ToString(yhteensaYla);
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
-            NelosetBT.Enabled = false;
         }
-
 
         private void ViitosetBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
-            ViitosetSummaLB.Text = Convert.ToString(summa);
-            ViitosetSummaLB.Visible = true;
+            summa = 0;
+            for (int i = 0; i < arvoTaulu.Length; i++)
+            {
+                if (arvoTaulu[i] == 5)
+                {
+                    summa += arvoTaulu[i];
+                    ViitosetSummaLB.Text = Convert.ToString(summa);
+                    ViitosetSummaLB.Visible = true;
+                    ViitosetBT.Enabled = false;
+                }
+                else if (arvoTaulu[0] != 5 && arvoTaulu[1] != 5 && arvoTaulu[2] != 5 && arvoTaulu[3] != 5 && arvoTaulu[4] != 5)
+                {
+                    ViitosetSummaLB.Text = "Dildo";
+                    ViitosetSummaLB.Visible = true;
+                }
+            }
             yhteensaYla += summa;
             YhtSumYlaLB.Text = Convert.ToString(yhteensaYla);
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
-            ViitosetBT.Enabled = false;
         }
-
 
         private void KuutosetBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
-            KuutosetSummaLB.Text = Convert.ToString(summa);
-            KuutosetSummaLB.Visible = true;
+            summa = 0;
+            for (int i = 0; i < arvoTaulu.Length; i++)
+            {
+                if (arvoTaulu[i] == 6)
+                {
+                    summa+=arvoTaulu[i];
+                    KuutosetSummaLB.Text = Convert.ToString(summa);
+                    KuutosetSummaLB.Visible = true;
+                    KuutosetBT.Enabled = false;
+                }
+                else if (arvoTaulu[0] != 6 && arvoTaulu[1] != 6 && arvoTaulu[2] != 6 && arvoTaulu[3] != 6 && arvoTaulu[4] != 6)
+                {
+                    KuutosetSummaLB.Text = "Dildo";
+                    KuutosetSummaLB.Visible = true;
+                }
+            }
             yhteensaYla += summa;
             YhtSumYlaLB.Text = Convert.ToString(yhteensaYla);
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
-            KuutosetBT.Enabled = false;
         }
 
         private void YksiPariBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
-            YksiPariLB.Text = Convert.ToString(summa);
-            YksiPariLB.Visible = true;
+            Array.Sort(arvoTaulu);
+            int pari1 = 0;
+            int pari2 = 0;
+            summa = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                if (arvoTaulu[i] == arvoTaulu[i + 1])
+                {
+                    if (pari1 == 0)
+                    {
+                        pari1 = arvoTaulu[i];
+                    }
+
+                    else
+                    {
+                        pari2 = arvoTaulu[i];
+                    }
+                    i++;
+                }
+            }
+            if(pari1 > pari2)
+            {
+                summa += pari1 * 2;
+                YksiPariLB.Text = Convert.ToString(summa);
+                YksiPariLB.Visible = true;
+            }
+            else if (pari2 > pari1)
+            {
+                summa += pari2 * 2;
+                YksiPariLB.Text = Convert.ToString(summa);
+                YksiPariLB.Visible = true;
+            }
             yhteensaAla += summa;
             YhtSumAlaLB.Text = Convert.ToString(yhteensaAla);
             YhtSumAlaLB.Visible = true;
@@ -312,9 +428,20 @@ namespace YatzyDiceGame
 
         private void KaksiPariaBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
-            KaksiPariaLB.Text = Convert.ToString(summa);
-            KaksiPariaLB.Visible = true;
+            Array.Sort(arvoTaulu);
+            summa = 0;
+            for (int i = 0; i < arvoTaulu.Length; i++)
+            {
+                for (int j = i + 1; j < arvoTaulu.Length - 1; j++)
+                {
+                    if (arvoTaulu[i] == arvoTaulu[j])
+                    {
+                        summa += arvoTaulu[j] + arvoTaulu[i];
+                        KaksiPariaLB.Text = Convert.ToString(summa);
+                        KaksiPariaLB.Visible = true;
+                    }
+                }
+            }
             yhteensaAla += summa;
             YhtSumAlaLB.Text = Convert.ToString(yhteensaAla);
             YhtSumAlaLB.Visible = true;
@@ -325,7 +452,23 @@ namespace YatzyDiceGame
 
         private void KolmoslukuBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
+            Array.Sort(arvoTaulu);
+            int kolmoset = 0;
+            summa = 0;
+            for (int i = 0; i < arvoTaulu.Length; i++)
+            {
+                for (int j = i + 1; j < arvoTaulu.Length; j++)
+                {
+                   if (arvoTaulu[i] == arvoTaulu[j])
+                    {
+                        kolmoset++;
+                        if(kolmoset == 3)
+                        {
+                            summa += arvoTaulu[j] * 3;
+                        }
+                    }
+                }
+            }
             KolmoslukuLB.Text = Convert.ToString(summa);
             KolmoslukuLB.Visible = true;
             yhteensaAla += summa;
@@ -338,7 +481,23 @@ namespace YatzyDiceGame
 
         private void NeloslukuBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
+            Array.Sort(arvoTaulu);
+            int neloset = 0;
+            summa = 0;
+            for (int i = 0; i < arvoTaulu.Length; i++)
+            {
+                for (int j = i + 1; j < arvoTaulu.Length; j++)
+                {
+                    if (arvoTaulu[i] == arvoTaulu[j])
+                    {
+                        neloset++;
+                        if (neloset == 4)
+                        {
+                            summa += arvoTaulu[j] * 4;
+                        }
+                    }
+                }
+            }
             NeloslukuLB.Text = Convert.ToString(summa);
             NeloslukuLB.Visible = true;
             yhteensaAla += summa;
@@ -353,7 +512,15 @@ namespace YatzyDiceGame
 
         private void PsuoraBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
+            summa = 0;
+            Array.Sort(arvoTaulu);
+            for (int i = 0; i < arvoTaulu.Length; i++) 
+            { 
+                if (arvoTaulu[0] == 1 && arvoTaulu[1] == 2 && arvoTaulu[2] == 3 && arvoTaulu[3] == 4 && arvoTaulu[4] == 5)
+                {
+                    summa += arvoTaulu[i];
+                }
+            }
             PSuoraLB.Text = Convert.ToString(summa);
             PSuoraLB.Visible = true;
             yhteensaAla += summa;
@@ -366,7 +533,15 @@ namespace YatzyDiceGame
 
         private void IsuoraBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
+            summa = 0;
+            Array.Sort(arvoTaulu);
+            for (int i = 0; i < arvoTaulu.Length; i++)
+            {
+                if (arvoTaulu[0] == 2 && arvoTaulu[1] == 3 && arvoTaulu[2] == 4 && arvoTaulu[3] == 5 && arvoTaulu[4] == 6)
+                {
+                    summa += arvoTaulu[i];
+                }
+            }
             IsuoraLB.Text = Convert.ToString(summa);
             IsuoraLB.Visible = true;
             yhteensaAla += summa;
@@ -379,7 +554,13 @@ namespace YatzyDiceGame
 
         private void TayskasiBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
+            summa = 0;
+            Array.Sort(arvoTaulu);
+            if ((arvoTaulu[0] == arvoTaulu[1] && arvoTaulu[1] == arvoTaulu[2] && arvoTaulu[3] == arvoTaulu[4]) ||
+                (arvoTaulu[0] == arvoTaulu[1] && arvoTaulu[2] == arvoTaulu[3] && arvoTaulu[3] == arvoTaulu[4]))
+            {
+                summa += arvoTaulu[0] + arvoTaulu[1] + arvoTaulu[2] + arvoTaulu[3] + arvoTaulu[4];
+            }
             TayskasiLB.Text = Convert.ToString(summa);
             TayskasiLB.Visible = true;
             yhteensaAla += summa;
@@ -393,7 +574,8 @@ namespace YatzyDiceGame
 
         private void SattumaBT_Click(object sender, EventArgs e)
         {
-            LaskuToimitus();
+            summa = 0;
+            summa += arvoTaulu[0] + arvoTaulu[1] + arvoTaulu[2] + arvoTaulu[3] + arvoTaulu[4];
             SattumaLB.Text = Convert.ToString(summa);
             SattumaLB.Visible = true;
             yhteensaAla += summa;
@@ -608,210 +790,9 @@ namespace YatzyDiceGame
             KaikenSumma2LB.Text = Convert.ToString(kaikenSumma2);
             Yatzy2BT.Enabled = false;
         }
-
-
-
-
-
-        /*
-        private void P2YkkosetBT_Click(object sender, EventArgs e)
-        {
-            PKaksiYkkosetSummaLB.Visible = true;
-            summa2 = 0;
-
-            if (arvoTaulu[0] == 1)
-            {
-                summa2++;
-            }
-            if (arvoTaulu[1] == 1)
-            {
-                summa2++;
-            }
-            if (arvoTaulu[2] == 1)
-            {
-                summa2++;
-            }
-            if (arvoTaulu[3] == 1)
-            {
-                summa2++;
-            }
-            if (arvoTaulu[4] == 1)
-            {
-                summa2++;
-            }
-            PKaksiYkkosetSummaLB.Text = Convert.ToString(summa2);
-            yhteensa2 += summa2;
-            YhtSum2.Text = Convert.ToString(yhteensa2);
-            YhtSum2.Visible = true;
-        }
-
-        private void P2KakkosetBT_Click(object sender, EventArgs e)
-        {
-            PKaksiKakkosetSummaLB.Visible = true;
-            summa2 = 0;
-
-            if (arvoTaulu[0] == 2)
-            {
-                summa2 += 2;
-            }
-            if (arvoTaulu[1] == 2)
-            {
-                summa2 += 2;
-            }
-            if (arvoTaulu[2] == 2)
-            {
-                summa2 += 2;
-            }
-            if (arvoTaulu[3] == 2)
-            {
-                summa2 += 2;
-            }
-            if (arvoTaulu[4] == 2)
-            {
-                summa2 += 2;
-            }
-            PKaksiKakkosetSummaLB.Text = Convert.ToString(summa2);
-            yhteensa2 += summa2;
-            YhtSum2.Text = Convert.ToString(yhteensa2);
-            YhtSum2.Visible = true;
-        }
-
-        private void P2KolmosetBT_Click(object sender, EventArgs e)
-        {
-            PKaksiKolmosetSummaLB.Visible = true;
-            summa2 = 0;
-
-            if (arvoTaulu[0] == 3)
-            {
-                summa2 += 3;
-            }
-            if (arvoTaulu[1] == 3)
-            {
-                summa2 += 3;
-            }
-            if (arvoTaulu[2] == 3)
-            {
-                summa2 += 3;
-            }
-            if (arvoTaulu[3] == 3)
-            {
-                summa2 += 3;
-            }
-            if (arvoTaulu[4] == 3)
-            {
-                summa2 += 3;
-            }
-            PKaksiKolmosetSummaLB.Text = Convert.ToString(summa2);
-            yhteensa2 += summa2;
-            YhtSum2.Text = Convert.ToString(yhteensa2);
-            YhtSum2.Visible = true;
-        }
-
-
-        private void P2NelosetBT_Click(object sender, EventArgs e)
-        {
-            PKaksiNelosetSummaLB.Visible = true;
-            summa2 = 0;
-
-            if (arvoTaulu[0] == 4)
-            {
-                summa2 += 4;
-            }
-            if (arvoTaulu[1] == 4)
-            {
-                summa2 += 4;
-            }
-            if (arvoTaulu[2] == 4)
-            {
-                summa2 += 4;
-            }
-            if (arvoTaulu[3] == 4)
-            {
-                summa2 += 4;
-            }
-            if (arvoTaulu[4] == 4)
-            {
-                summa2 += 4;
-            }
-            PKaksiNelosetSummaLB.Text = Convert.ToString(summa2);
-            yhteensa2 += summa2;
-            YhtSum2.Text = Convert.ToString(yhteensa2);
-            YhtSum2.Visible = true;
-        }
-
-
-        private void P2ViitosetBT_Click(object sender, EventArgs e)
-        {
-            PKaksiViitosetSummaLB.Visible = true;
-            summa2 = 0;
-
-            if (arvoTaulu[0] == 5)
-            {
-                summa2 += 5;
-            }
-            if (arvoTaulu[1] == 5)
-            {
-                summa2 += 5;
-            }
-            if (arvoTaulu[2] == 5)
-            {
-                summa2 += 5;
-            }
-            if (arvoTaulu[3] == 5)
-            {
-                summa2 += 5;
-            }
-            if (arvoTaulu[4] == 5)
-            {
-                summa2 += 5;
-            }
-            PKaksiViitosetSummaLB.Text = Convert.ToString(summa2);
-            yhteensa2 += summa2;
-            YhtSum2.Text = Convert.ToString(yhteensa2);
-            YhtSum2.Visible = true;
-        }
-
-        private void P2KuutosetBT_Click(object sender, EventArgs e)
-        {
-            PKaksiKuutosetSummaLB.Visible = true;
-            summa2 = 0;
-
-            if (arvoTaulu[0] == 6)
-            {
-                summa2 += 6;
-            }
-            if (arvoTaulu[1] == 6)
-            {
-                summa2 += 6;
-            }
-            if (arvoTaulu[2] == 6)
-            {
-                summa2 += 6;
-            }
-            if (arvoTaulu[3] == 6)
-            {
-                summa2 += 6;
-            }
-            if (arvoTaulu[4] == 6)
-            {
-                summa2 += 6;
-            }
-            PKaksiKuutosetSummaLB.Text = Convert.ToString(summa2);
-            yhteensa2 += summa2;
-            YhtSum2.Text = Convert.ToString(yhteensa2);
-            YhtSum2.Visible = true;
-        }
-        */
-
-
+                
         // Laitetaan nopille klikkausominaisuus(noppaa klikatessa checkboxin chekkaus vaihtuu 
-
-
-        
-
-
-
-
+             
         private void Noppa01PB_Click(object sender, EventArgs e)
         {
             
