@@ -143,6 +143,7 @@
             this.HoldIcon3 = new System.Windows.Forms.Label();
             this.HoldIcon4 = new System.Windows.Forms.Label();
             this.HoldIcon5 = new System.Windows.Forms.Label();
+            this.ExitBT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa01PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa02PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Noppa03PB)).BeginInit();
@@ -1643,6 +1644,19 @@
             this.HoldIcon5.Text = "I";
             this.HoldIcon5.Visible = false;
             // 
+            // ExitBT
+            // 
+            this.ExitBT.BackColor = System.Drawing.Color.OrangeRed;
+            this.ExitBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitBT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ExitBT.Location = new System.Drawing.Point(1045, 7);
+            this.ExitBT.Name = "ExitBT";
+            this.ExitBT.Size = new System.Drawing.Size(33, 33);
+            this.ExitBT.TabIndex = 32;
+            this.ExitBT.Text = "X";
+            this.ExitBT.UseVisualStyleBackColor = false;
+            this.ExitBT.Click += new System.EventHandler(this.ExitBT_Click);
+            // 
             // YatzyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -1651,6 +1665,7 @@
             this.BackgroundImage = global::YatzyDiceGame.Properties.Resources.ryunosuke_kikuno_UsocPeObI3Y_unsplash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1087, 851);
+            this.Controls.Add(this.ExitBT);
             this.Controls.Add(this.HoldIcon5);
             this.Controls.Add(this.HoldIcon4);
             this.Controls.Add(this.HoldIcon3);
@@ -1681,6 +1696,7 @@
             this.Controls.Add(this.Noppa01PB);
             this.Controls.Add(this.OtsikkoLB);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "YatzyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1829,5 +1845,6 @@
         private Label HoldIcon3;
         private Label HoldIcon4;
         private Label HoldIcon5;
+        private Button ExitBT;
     }
 }

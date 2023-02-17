@@ -65,6 +65,7 @@
             this.ClientSize = new System.Drawing.Size(860, 852);
             this.Controls.Add(this.AloitaPeliBT);
             this.Controls.Add(this.OtsikkoLB);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AloitusForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aloitus";
