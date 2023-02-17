@@ -66,6 +66,7 @@
             this.Controls.Add(this.AloitaPeliBT);
             this.Controls.Add(this.OtsikkoLB);
             this.Name = "AloitusForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aloitus";
             this.ResumeLayout(false);
             this.PerformLayout();

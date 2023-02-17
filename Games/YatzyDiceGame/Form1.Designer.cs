@@ -1683,6 +1683,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "YatzyForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yatzy dice game";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Yatzy_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.Noppa01PB)).EndInit();

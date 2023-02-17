@@ -1,20 +1,36 @@
-﻿using System.Runtime.CompilerServices;
+﻿using Array;
+using System.Runtime.CompilerServices;
+using System.Runtime.ExceptionServices;
 using System.Security.Cryptography.X509Certificates;
 
-int[] noppaArvot = new int[] { 1, 2, 1, 2, 1 };
-Array.Sort(noppaArvot);
-
-for (int i = 0; i < noppaArvot.Length; i++) 
+internal class Program
 {
-    for (int j = i+1; j < noppaArvot.Length; j++)
+    
+    private static void Main(string[] args)
     {
-        if (noppaArvot[i] == noppaArvot[j])
+    aloitus:
+
+        string kluku;
+        int numero;
+
+        Console.WriteLine();
+        Console.WriteLine("Heitä noppaa. Ohjelma tulostaa viiden nopan silmäluvut.");
+        Console.WriteLine("1. Heitä noppaa: ");
+        Console.WriteLine("2. Tee jotain muuta: ");
+        kluku = Console.ReadLine();
+
+        numero = Int32.Parse(kluku);
+
+        switch (numero) 
         {
-            Console.WriteLine("Taulukossa on pari");
+            case 1: Nopat.NopanHeitto(); 
+                break;
+            case 2: Console.WriteLine("Väärä valinta. Heippa!");
+                break;
+            default: Console.WriteLine("Syötä oikea numero.");
+                break;
+                
         }
+        goto aloitus;
     }
 }
-
-// Laskutoimitus
-
-
