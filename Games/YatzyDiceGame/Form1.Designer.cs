@@ -240,7 +240,7 @@
             // 
             this.KaikkiBT.AutoSize = true;
             this.KaikkiBT.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.KaikkiBT.Location = new System.Drawing.Point(304, 223);
+            this.KaikkiBT.Location = new System.Drawing.Point(303, 198);
             this.KaikkiBT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.KaikkiBT.Name = "KaikkiBT";
             this.KaikkiBT.Size = new System.Drawing.Size(131, 41);
@@ -253,7 +253,7 @@
             // 
             this.ValitutBT.AutoSize = true;
             this.ValitutBT.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ValitutBT.Location = new System.Drawing.Point(482, 223);
+            this.ValitutBT.Location = new System.Drawing.Point(482, 198);
             this.ValitutBT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ValitutBT.Name = "ValitutBT";
             this.ValitutBT.Size = new System.Drawing.Size(131, 41);
@@ -321,7 +321,7 @@
             // 
             this.AlustaBT.AutoSize = true;
             this.AlustaBT.BackColor = System.Drawing.Color.Coral;
-            this.AlustaBT.Location = new System.Drawing.Point(674, 223);
+            this.AlustaBT.Location = new System.Drawing.Point(658, 198);
             this.AlustaBT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AlustaBT.Name = "AlustaBT";
             this.AlustaBT.Size = new System.Drawing.Size(131, 41);
@@ -560,12 +560,13 @@
             // 
             // Pelaaja1LB
             // 
-            this.Pelaaja1LB.AutoSize = true;
-            this.Pelaaja1LB.Location = new System.Drawing.Point(86, 9);
+            this.Pelaaja1LB.BackColor = System.Drawing.Color.YellowGreen;
+            this.Pelaaja1LB.Location = new System.Drawing.Point(-1, -2);
             this.Pelaaja1LB.Name = "Pelaaja1LB";
-            this.Pelaaja1LB.Size = new System.Drawing.Size(82, 25);
+            this.Pelaaja1LB.Size = new System.Drawing.Size(263, 47);
             this.Pelaaja1LB.TabIndex = 3;
             this.Pelaaja1LB.Text = "Pelaaja1";
+            this.Pelaaja1LB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SattumaBT
             // 
@@ -826,18 +827,18 @@
             // 
             // Pelaaja2LB
             // 
-            this.Pelaaja2LB.AutoSize = true;
-            this.Pelaaja2LB.Location = new System.Drawing.Point(907, 9);
+            this.Pelaaja2LB.Location = new System.Drawing.Point(827, -2);
             this.Pelaaja2LB.Name = "Pelaaja2LB";
-            this.Pelaaja2LB.Size = new System.Drawing.Size(82, 25);
+            this.Pelaaja2LB.Size = new System.Drawing.Size(262, 47);
             this.Pelaaja2LB.TabIndex = 3;
             this.Pelaaja2LB.Text = "Pelaaja2";
+            this.Pelaaja2LB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UusiBT
             // 
             this.UusiBT.AutoSize = true;
             this.UusiBT.BackColor = System.Drawing.Color.OliveDrab;
-            this.UusiBT.Location = new System.Drawing.Point(482, 138);
+            this.UusiBT.Location = new System.Drawing.Point(482, 772);
             this.UusiBT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UusiBT.Name = "UusiBT";
             this.UusiBT.Size = new System.Drawing.Size(131, 36);
@@ -1138,6 +1139,7 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.AutoSize = true;
+            this.tableLayoutPanel4.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.84774F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.15226F));
@@ -1174,7 +1176,7 @@
             // 
             this.OhjeetBT.AutoSize = true;
             this.OhjeetBT.BackColor = System.Drawing.Color.OliveDrab;
-            this.OhjeetBT.Location = new System.Drawing.Point(482, 797);
+            this.OhjeetBT.Location = new System.Drawing.Point(482, 813);
             this.OhjeetBT.Name = "OhjeetBT";
             this.OhjeetBT.Size = new System.Drawing.Size(131, 36);
             this.OhjeetBT.TabIndex = 25;
@@ -1649,7 +1651,7 @@
             this.ExitBT.BackColor = System.Drawing.Color.OrangeRed;
             this.ExitBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitBT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ExitBT.Location = new System.Drawing.Point(1045, 7);
+            this.ExitBT.Location = new System.Drawing.Point(779, 9);
             this.ExitBT.Name = "ExitBT";
             this.ExitBT.Size = new System.Drawing.Size(33, 33);
             this.ExitBT.TabIndex = 32;

@@ -6,10 +6,10 @@ using YatzyDiceGame.Properties;
 
 namespace YatzyDiceGame
 {
-
+    
     public partial class YatzyForm : Form
     {
-
+        
         // Luodaan noppien silmälukujen arvoille muuttujat
         int noppaArvo1, noppaArvo2, noppaArvo3, noppaArvo4, noppaArvo5;
         // Luodaan arvoTaulu ja loppuTulos-taulukot, joihin tullaan syöttämään noppien arvot
@@ -25,7 +25,7 @@ namespace YatzyDiceGame
 
         // Luodaan metodi Heitä kaikki-buttonille
         // Jokaiselle noppa-pictureboxille kutsutaan erikseen samaa PiirräNoppa-metodia 
-        
+                
       
                     
         private void KaikkiBT_Click(object sender, EventArgs e)
@@ -199,6 +199,8 @@ namespace YatzyDiceGame
                     YkkosetSummaLB.Visible = true;
                     YkkosetBT.Enabled = false;
                     YkkosetBT.BackColor= Color.OliveDrab;
+                    Pelaaja1LB.BackColor = SystemColors.Control;
+                    Pelaaja2LB.BackColor = Color.LimeGreen;
                 }
             }
 
@@ -207,7 +209,8 @@ namespace YatzyDiceGame
             YhtSumYlaLB.Visible = true;
             kaikenSumma += summa;
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
-            
+            Array.Clear(arvoTaulu);
+           
             
             /*
             Toinen tapa, jolla kutsutaan erillistä laskutoimitus-metodia
@@ -234,6 +237,8 @@ namespace YatzyDiceGame
                     KakkosetSummaLB.Visible = true;
                     KakkosetBT.Enabled = false;
                     KakkosetBT.BackColor= Color.OliveDrab;
+                    Pelaaja1LB.BackColor = SystemColors.Control;
+                    Pelaaja2LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla += summa;
@@ -255,6 +260,8 @@ namespace YatzyDiceGame
                     KolmosetSummaLB.Visible = true;
                     KolmosetBT.Enabled = false;
                     KolmosetBT.BackColor= Color.OliveDrab;
+                    Pelaaja1LB.BackColor = SystemColors.Control;
+                    Pelaaja2LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla += summa;
@@ -276,6 +283,8 @@ namespace YatzyDiceGame
                     NelosetSummaLB.Visible = true;
                     NelosetBT.Enabled = false;
                     NelosetBT.BackColor= Color.OliveDrab;
+                    Pelaaja1LB.BackColor = SystemColors.Control;
+                    Pelaaja2LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla += summa;
@@ -297,6 +306,8 @@ namespace YatzyDiceGame
                     ViitosetSummaLB.Visible = true;
                     ViitosetBT.Enabled = false;
                     ViitosetBT.BackColor= Color.OliveDrab;
+                    Pelaaja1LB.BackColor = SystemColors.Control;
+                    Pelaaja2LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla += summa;
@@ -318,6 +329,8 @@ namespace YatzyDiceGame
                     KuutosetSummaLB.Visible = true;
                     KuutosetBT.Enabled = false;
                     KuutosetBT.BackColor = Color.OliveDrab;
+                    Pelaaja1LB.BackColor = SystemColors.Control;
+                    Pelaaja2LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla += summa;
@@ -356,6 +369,8 @@ namespace YatzyDiceGame
                 YksiPariLB.Visible = true;
                 YksiPariBT.Enabled = false;
                 YksiPariBT.BackColor = Color.OliveDrab;
+                Pelaaja1LB.BackColor = SystemColors.Control;
+                Pelaaja2LB.BackColor = Color.LimeGreen;
             }
             else if (pari2 > pari1)
             {
@@ -364,6 +379,8 @@ namespace YatzyDiceGame
                 YksiPariLB.Visible = true;
                 YksiPariBT.Enabled = false;
                 YkkosetBT.BackColor = Color.Green;
+                Pelaaja1LB.BackColor = SystemColors.Control;
+                Pelaaja2LB.BackColor = Color.LimeGreen;
             }
             yhteensaAla += summa;
             YhtSumAlaLB.Text = Convert.ToString(yhteensaAla);
@@ -393,6 +410,8 @@ namespace YatzyDiceGame
                                     KaksiPariaLB.Visible = true;
                                     KaksiPariaBT.Enabled = false;
                                     KaksiPariaBT.BackColor = Color.OliveDrab;
+                                    Pelaaja1LB.BackColor = SystemColors.Control;
+                                    Pelaaja2LB.BackColor = Color.LimeGreen;
                                 }
                             }
                         }
@@ -426,6 +445,8 @@ namespace YatzyDiceGame
                             KolmoslukuLB.Visible = true;
                             KolmoslukuBT.Enabled = false;
                             KolmoslukuBT.BackColor = Color.OliveDrab;
+                            Pelaaja1LB.BackColor = SystemColors.Control;
+                            Pelaaja2LB.BackColor = Color.LimeGreen;
                         }
                     }
                 }
@@ -456,6 +477,8 @@ namespace YatzyDiceGame
                             NeloslukuLB.Visible = true;
                             NeloslukuBT.Enabled = false;
                             NeloslukuBT.BackColor = Color.OliveDrab;
+                            Pelaaja1LB.BackColor = SystemColors.Control;
+                            Pelaaja2LB.BackColor = Color.LimeGreen;
                         }
                     }
                 }
@@ -482,6 +505,8 @@ namespace YatzyDiceGame
                     PSuoraLB.Visible = true;
                     PsuoraBT.Enabled = false;
                     PsuoraBT.BackColor = Color.OliveDrab;
+                    Pelaaja1LB.BackColor = SystemColors.Control;
+                    Pelaaja2LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaAla += summa;
@@ -504,6 +529,8 @@ namespace YatzyDiceGame
                     IsuoraLB.Visible = true;
                     IsuoraBT.Enabled = false;
                     IsuoraBT.BackColor = Color.OliveDrab;
+                    Pelaaja1LB.BackColor = SystemColors.Control;
+                    Pelaaja2LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaAla += summa;
@@ -525,6 +552,8 @@ namespace YatzyDiceGame
                 TayskasiLB.Visible = true;
                 TayskasiBT.Enabled = false;
                 TayskasiBT.BackColor = Color.OliveDrab;
+                Pelaaja1LB.BackColor = SystemColors.Control;
+                Pelaaja2LB.BackColor = Color.LimeGreen;
             }
             yhteensaAla += summa;
             YhtSumAlaLB.Text = Convert.ToString(yhteensaAla);
@@ -547,6 +576,8 @@ namespace YatzyDiceGame
             KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
             SattumaBT.Enabled = false;
             SattumaBT.BackColor = Color.OliveDrab;
+            Pelaaja1LB.BackColor = SystemColors.Control;
+            Pelaaja2LB.BackColor = Color.LimeGreen;
         }
 
         private void YatzyBT_Click(object sender, EventArgs e)
@@ -562,6 +593,8 @@ namespace YatzyDiceGame
                 KaikenSummaLB.Text = Convert.ToString(kaikenSumma);
                 YatzyBT.Enabled = false;
                 YatzyBT.BackColor = Color.OliveDrab;
+                Pelaaja1LB.BackColor = SystemColors.Control;
+                Pelaaja2LB.BackColor = Color.LimeGreen;
             }
         }
 
@@ -580,6 +613,8 @@ namespace YatzyDiceGame
                     YkkosetSumma2LB.Visible = true;
                     Ykkoset2BT.Enabled = false;
                     Ykkoset2BT.BackColor = Color.OliveDrab;
+                    Pelaaja2LB.BackColor = SystemColors.Control;
+                    Pelaaja1LB.BackColor = Color.LimeGreen;
                 }
             }
 
@@ -602,6 +637,8 @@ namespace YatzyDiceGame
                     KakkosetSumma2LB.Visible = true;
                     Kakkoset2BT.Enabled = false;
                     Kakkoset2BT.BackColor = Color.OliveDrab;
+                    Pelaaja2LB.BackColor = SystemColors.Control;
+                    Pelaaja1LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla2 += summa;
@@ -623,6 +660,8 @@ namespace YatzyDiceGame
                     KolmosetSumma2LB.Visible = true;
                     Kolmoset2BT.Enabled = false;
                     Kolmoset2BT.BackColor = Color.OliveDrab;
+                    Pelaaja2LB.BackColor = SystemColors.Control;
+                    Pelaaja1LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla2 += summa;
@@ -644,6 +683,8 @@ namespace YatzyDiceGame
                     NelosetSumma2LB.Visible = true;
                     Neloset2BT.Enabled = false;
                     Neloset2BT.BackColor = Color.OliveDrab;
+                    Pelaaja2LB.BackColor = SystemColors.Control;
+                    Pelaaja1LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla2 += summa;
@@ -665,6 +706,8 @@ namespace YatzyDiceGame
                     ViitosetSumma2LB.Visible = true;
                     Viitoset2BT.Enabled = false;
                     Viitoset2BT.BackColor = Color.OliveDrab;
+                    Pelaaja2LB.BackColor = SystemColors.Control;
+                    Pelaaja1LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla2 += summa;
@@ -686,6 +729,8 @@ namespace YatzyDiceGame
                     KuutosetSumma2LB.Visible = true;
                     Kuutoset2BT.Enabled = false;
                     Kuutoset2BT.BackColor = Color.OliveDrab;
+                    Pelaaja2LB.BackColor = SystemColors.Control;
+                    Pelaaja1LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla2 += summa;
@@ -725,6 +770,8 @@ namespace YatzyDiceGame
                 YksiPari2LB.Visible = true;
                 YksiPari2BT.Enabled = false;
                 YksiPari2BT.BackColor = Color.OliveDrab;
+                Pelaaja2LB.BackColor = SystemColors.Control;
+                Pelaaja1LB.BackColor = Color.LimeGreen;
             }
             else if (pari2 > pari1)
             {
@@ -733,6 +780,8 @@ namespace YatzyDiceGame
                 YksiPari2LB.Visible = true;
                 YksiPari2BT.Enabled = false;
                 Ykkoset2BT.BackColor = Color.Green;
+                Pelaaja2LB.BackColor = SystemColors.Control;
+                Pelaaja1LB.BackColor = Color.LimeGreen;
             }
             yhteensaYla2 += summa;
             YhtSumYla2LB.Text = Convert.ToString(yhteensaYla2);
@@ -762,6 +811,8 @@ namespace YatzyDiceGame
                                     KaksiParia2LB.Visible = true;
                                     KaksiParia2BT.Enabled = false;
                                     KaksiParia2BT.BackColor = Color.OliveDrab;
+                                    Pelaaja2LB.BackColor = SystemColors.Control;
+                                    Pelaaja1LB.BackColor = Color.LimeGreen;
                                 }
                             }
                         }
@@ -795,6 +846,8 @@ namespace YatzyDiceGame
                             Kolmosluku2LB.Visible = true;
                             Kolmosluku2BT.Enabled = false;
                             Kolmosluku2BT.BackColor = Color.OliveDrab;
+                            Pelaaja2LB.BackColor = SystemColors.Control;
+                            Pelaaja1LB.BackColor = Color.LimeGreen;
                         }
                     }
                 }
@@ -825,6 +878,8 @@ namespace YatzyDiceGame
                             Nelosluku2LB.Visible = true;
                             Nelosluku2BT.Enabled = false;
                             Nelosluku2BT.BackColor = Color.OliveDrab;
+                            Pelaaja2LB.BackColor = SystemColors.Control;
+                            Pelaaja1LB.BackColor = Color.LimeGreen;
                         }
                     }
                 }
@@ -849,6 +904,8 @@ namespace YatzyDiceGame
                     PSuora2LB.Visible = true;
                     PSuora2BT.Enabled = false;
                     PSuora2BT.BackColor = Color.OliveDrab;
+                    Pelaaja2LB.BackColor = SystemColors.Control;
+                    Pelaaja1LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla2 += summa;
@@ -871,6 +928,8 @@ namespace YatzyDiceGame
                     ISuora2LB.Visible = true;
                     ISuora2BT.Enabled = false;
                     ISuora2BT.BackColor = Color.OliveDrab;
+                    Pelaaja2LB.BackColor = SystemColors.Control;
+                    Pelaaja1LB.BackColor = Color.LimeGreen;
                 }
             }
             yhteensaYla2 += summa;
@@ -892,6 +951,8 @@ namespace YatzyDiceGame
                 Tayskasi2LB.Visible = true;
                 Tayskasi2BT.Enabled = false;
                 Tayskasi2BT.BackColor = Color.OliveDrab;
+                Pelaaja2LB.BackColor = SystemColors.Control;
+                Pelaaja1LB.BackColor = Color.LimeGreen;
             }
             yhteensaYla2 += summa;
             YhtSumYla2LB.Text = Convert.ToString(yhteensaYla2);
@@ -913,6 +974,8 @@ namespace YatzyDiceGame
             KaikenSumma2LB.Text = Convert.ToString(kaikenSumma2);
             Sattuma2BT.Enabled = false;
             Sattuma2BT.BackColor = Color.OliveDrab;
+            Pelaaja2LB.BackColor = SystemColors.Control;
+            Pelaaja1LB.BackColor = Color.LimeGreen;
         }
 
         private void Yatzy2BT_Click(object sender, EventArgs e)
@@ -928,6 +991,8 @@ namespace YatzyDiceGame
                 KaikenSumma2LB.Text = Convert.ToString(kaikenSumma2);
                 Yatzy2BT.Enabled = false;
                 Yatzy2BT.BackColor = Color.OliveDrab;
+                Pelaaja2LB.BackColor = SystemColors.Control;
+                Pelaaja1LB.BackColor = Color.LimeGreen;
             }
         }
                 
